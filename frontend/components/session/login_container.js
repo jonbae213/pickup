@@ -1,15 +1,14 @@
 import { connect } from 'react-redux';
-import { createNewUser } from '../../actions/session_actions';
+import { loginUser } from '../../actions/session_actions';
 import AccountForm from './_account_form';
 
 const mapStateToProps = state => ({
   errors: state.errors.session,
-  formType: "Sign Up"
+  formType: "Log In"
 })
 
 const mapDispatchToProps = dispatch => ({
-  submitForm: formUser => dispatch(createNewUser(formUser))
+  submitForm: formUser => dispatch(loginUser(formUser))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AccountForm);
-
