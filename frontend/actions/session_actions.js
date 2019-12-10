@@ -19,13 +19,19 @@ const receiveSessionErrors = (errors) => ({
 });
 
 export const createNewUser = formUser => dispatch => {
-  SessionUtil.signup(formUser).then(user => dispatch(receiveCurrentUser(user)))
+  SessionUtil.signup(formUser)
+    .then(user => dispatch(receiveCurrentUser(user)),
+    (err) => dispatch(receiveSessionErrors(err)))
 };
 
 export const loginUser = formUser => dispatch => {
-  SessionUtil.login(formUser).then(user => dispatch(receiveCurrentUser(user)))
+  SessionUtil.login(formUser)
+    .then(user => dispatch(receiveCurrentUser(user)),
+    (err) => dispatch(receiveSessionErrors(err)))
 };
 
 export const logoutUser = () => dispatch => {
-  SessionUtil.logout().then(() => dispatch(logoutTheUser()))
+  SessionUtil.logout()
+    .then(() => dispatch(logoutTheUser()),
+    (err) => dispatch(receiveSessionErrors(err)))
 };
