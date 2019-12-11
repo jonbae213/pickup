@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  full_name       :string           default("")
+#  email           :string           not null
+#  aboutme         :text             default("")
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
   validates :password_digest, :session_token, :email, presence: true
   validates :session_token, :email, uniqueness: true
