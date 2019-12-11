@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_191140) do
+ActiveRecord::Schema.define(version: 2019_12_11_152744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hobbies", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description", null: false
+    t.index ["name"], name: "index_hobbies_on_name", unique: true
+  end
+
+  create_table "things", force: :cascade do |t|
+    t.bigint "hobby_id", null: false
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.date "deadline", null: false
+    t.text "desription", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hobby_id"], name: "index_things_on_hobby_id"
+    t.index ["name"], name: "index_things_on_name", unique: true
+  end
+
+  create_table "user_hobbies", force: :cascade do |t|
+    t.bigint "hobby_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hobby_id", "user_id"], name: "index_user_hobbies_on_hobby_id_and_user_id", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "password_digest", null: false

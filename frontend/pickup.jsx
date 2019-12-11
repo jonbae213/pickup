@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 // import { signup, logout, login } from './util/session_util';
-import { openModal } from './actions/modal_actions';
+
 document.addEventListener("DOMContentLoaded", () => {
  
   const root = document.getElementById("root");
