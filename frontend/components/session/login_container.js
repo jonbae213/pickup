@@ -9,7 +9,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  submitForm: formUser => dispatch(loginUser(formUser))
+  submitForm: formUser => dispatch(loginUser(formUser)),
+  loginUser: formUser => dispatch(loginUser(formUser)),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AccountForm));

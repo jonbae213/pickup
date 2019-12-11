@@ -1,4 +1,5 @@
 import React from 'react';
+import { loginUser } from '../../actions/session_actions';
 
 class AccountForm extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class AccountForm extends React.Component {
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoUser = this.demoUser.bind(this);
   }
 
   handleInput(input) {
@@ -20,6 +22,7 @@ class AccountForm extends React.Component {
   handleSubmit(e) {
     // e.preventDefault();
     this.props.submitForm(this.state);
+    this.props.closeModal();
   }
 
   renderErrors() {
@@ -33,6 +36,10 @@ class AccountForm extends React.Component {
         </ul>
       );
     }
+  }
+
+  demoUser() {
+    this.props.loginUser({email: "tester1@gmail.com", password: "applepie"});
   }
 
   render() {
@@ -61,6 +68,7 @@ class AccountForm extends React.Component {
           </div>
           <button onClick={this.handleSubmit}>{this.props.formType.toUpperCase()}</button>
         </form>
+        <button onClick={this.demoUser}>DEMO USER</button>
       </>
     )
   }

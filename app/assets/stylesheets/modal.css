@@ -41,8 +41,8 @@ label {
 
 input {
   width: 375px;
-  height: 27px;
-  margin: 10px auto;
+  height: 26px;
+  margin: 10px;
   border-radius: 3px;
   box-shadow: none;
 }
@@ -52,11 +52,12 @@ input {
   align-content: center;
 }
 
-form > button {
+.account-modal-child button {
   width: 375px;
   height: 27px;
   background-color: black;
   color: white;
+  margin: 10px;
 }
 
 .errors-container {
