@@ -1,4 +1,4 @@
-json.partial! 'api/shared/hobbies', hobby: @hobby
+json.partial! 'api/hobbies/hobbies', hobby: @hobby
 json.thing_ids do
   thing_array = []
   @hobby.things.each do |thing|

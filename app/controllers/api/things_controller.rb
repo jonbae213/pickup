@@ -1,10 +1,10 @@
 class Api::ThingsController < ApplicationController
 
   def index
-    if params[:hobby_id] === undefined
-      @things = Thing.all
+    if params[:hobby_id]
+      @things = Hobby.includes(:things).find_by(id: params[:hobby_id])  
     else
-      @things = Hobby.includes(:things).find_by(id: params[:hobby_id])
+      @things = Thing.all
     end
     render :index
   end

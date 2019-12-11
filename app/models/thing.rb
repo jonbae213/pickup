@@ -13,7 +13,7 @@
 #
 
 class Thing < ApplicationRecord
-  validates :name, :price, :deadline, :description, presence: true
+  validates :name, :price, :description, presence: true
   validates :name, uniqueness: true
 
   belongs_to :hobby

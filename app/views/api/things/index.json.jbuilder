@@ -1,3 +1,3 @@
 @things.each do |thing|
-  json.partial! 'api/shared/things', thing: thing
+  json.partial! 'api/things/things', thing: thing
 end

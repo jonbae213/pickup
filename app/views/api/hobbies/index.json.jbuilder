@@ -1,10 +1,12 @@
 @hobbies.each do |hobby|
-  json.partial! 'api/shared/hobby', hobby: hobby
-  json.thing_ids do
-    thing_array = []
-    @hobby.things.each do |thing|
-      thing_array << thing
+  json.set! hobby.id do  
+    json.partial! 'api/hobbies/hobbies', hobby: hobby
+    json.thing_ids do
+      thing_array = []
+      @hobby.things.each do |thing|
+        thing_array << thing.id
+      end
+      json.array! thing_array
     end
-    json.array! thing_array
   end
 end
