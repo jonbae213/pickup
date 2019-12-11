@@ -18,8 +18,8 @@ class AccountForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    this.props.submitForm(this.state)
+    // e.preventDefault();
+    this.props.submitForm(this.state);
   }
 
   renderErrors() {
@@ -41,19 +41,25 @@ class AccountForm extends React.Component {
         <h2>{this.props.formType}</h2>
         <div className="errors-container">{this.renderErrors()}</div>
         <form>
-          <label>Email:
-            <input type="email"
-              value={this.state.email}
-              onChange={this.handleInput('email')}
-            />
-          </label>
-          <label>Password:
-            <input type="password"
-              value={this.state.password}
-              onChange={this.handleInput('password')}
-            />
-          </label>
-          <button onClick={this.handleSubmit}>{this.props.formType}</button>
+          <div className="form-row">
+            <label>Email
+              <input required type="email"
+                placeholder="Email"
+                value={this.state.email}
+                onChange={this.handleInput('email')}
+              />
+            </label>
+          </div>
+          <div className="form-row">
+            <label>Password
+              <input required type="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.handleInput('password')}
+              />
+            </label>
+          </div>
+          <button onClick={this.handleSubmit}>{this.props.formType.toUpperCase()}</button>
         </form>
       </>
     )

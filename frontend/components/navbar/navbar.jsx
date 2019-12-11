@@ -1,7 +1,9 @@
 import Modal from '../modal/modal';
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
-import { Route } from 'react-router-dom'
+import { Route } from 'react-router-dom';
+import { login } from '../../util/session_util';
+
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -28,14 +30,25 @@ class Navbar extends React.Component {
   }
   
   render() {
+    let loginSignup;
+    let logoutButton;
+    if (this.props.currentUser) {
+      logoutButton = <button onClick={this.handleLogout}>Log Out</button>
+    } else {
+      loginSignup = <nav className="login-signup">
+        <div className="signup">
+          <button onClick={this.handleSignup}>SIGN UP</button>
+        </div>
+        <div className="login">
+          <button onClick={this.handleLogin}>LOG IN</button>
+        </div>
+      </nav>
+    }
     return (
       <nav className="header-nav-bar">
-        <img src=""/>
-        <button onClick={this.handleLogout}>Log Out</button>
-        <nav className="login-signup">
-          <button onClick={this.handleLogin}>Log In</button>
-          <button onClick={this.handleSignup}>Sign Up</button>
-        </nav>
+        <img className="logo" src={window.logo} />
+        {loginSignup}
+        {logoutButton}
       </nav>
     )
   }

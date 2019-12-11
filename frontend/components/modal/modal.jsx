@@ -25,7 +25,7 @@ const Modal = ({ modal, closeModal }) => {
   return (
     <div className="account-modal" onClick={closeModal}>
       <div className="account-modal-child" onClick={e => e.stopPropagation()}>
-        { component }
+        {component}
       </div>
     </div>
   );

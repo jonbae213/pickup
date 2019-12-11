@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  font-family: Gordita, Helvetica, Arial, Verdana;
+  background: black;
+  width: 100%;
+  position: absolute;
+}
