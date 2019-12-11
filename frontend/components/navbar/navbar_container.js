@@ -1,5 +1,5 @@
 import { openModal } from '../../actions/modal_actions';
-import { logoutUser } from '../../actions/session_actions';
+import { logoutUser } from '../../actions/user_actions';
 import { connect } from 'react-redux';
 import Navbar from './navbar';
 

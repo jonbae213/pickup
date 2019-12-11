@@ -4,7 +4,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: #F1EEE7;
+  background-color: #F1EEE7;
   opacity: 0.9;
   z-index: 10;
 }
@@ -15,9 +15,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: #FFFF;
   width: 450px;
   height: 500px;
+  z-index: 11;
 }
 
 form {

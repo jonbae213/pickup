@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_11_152744) do
+ActiveRecord::Schema.define(version: 2019_12_11_220918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 2019_12_11_152744) do
     t.bigint "hobby_id", null: false
     t.string "name", null: false
     t.integer "price", null: false
-    t.date "deadline", null: false
-    t.text "desription", null: false
+    t.string "deadline"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description", null: false
     t.index ["hobby_id"], name: "index_things_on_hobby_id"
     t.index ["name"], name: "index_things_on_name", unique: true
   end

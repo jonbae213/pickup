@@ -1,5 +1,5 @@
 import React from 'react';
-import { loginUser } from '../../actions/session_actions';
+import { loginUser } from '../../actions/user_actions';
 
 class AccountForm extends React.Component {
   constructor(props) {
@@ -11,6 +11,7 @@ class AccountForm extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoUser = this.demoUser.bind(this);
+    this.switchForm = this.switchForm.bind(this);
   }
 
   handleInput(input) {
@@ -22,7 +23,6 @@ class AccountForm extends React.Component {
   handleSubmit(e) {
     // e.preventDefault();
     this.props.submitForm(this.state);
-    this.props.closeModal();
   }
 
   renderErrors() {
@@ -40,6 +40,10 @@ class AccountForm extends React.Component {
 
   demoUser() {
     this.props.loginUser({email: "tester1@gmail.com", password: "applepie"});
+  }
+
+  switchForm() {
+    this.props.openModal(this.props.otherFormType);
   }
 
   render() {
@@ -69,6 +73,10 @@ class AccountForm extends React.Component {
           <button onClick={this.handleSubmit}>{this.props.formType.toUpperCase()}</button>
         </form>
         <button onClick={this.demoUser}>DEMO USER</button>
+        <span>
+          <div>{this.props.text}</div>
+          <button onClick={this.switchForm}>{this.props.otherFormType.toUpperCase()}</button>    
+        </span>
       </>
     )
   }

@@ -2,7 +2,7 @@ import Modal from '../modal/modal';
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { Route } from 'react-router-dom';
-import { login } from '../../util/session_util';
+import { login } from '../../util/user_util';
 
 
 class Navbar extends React.Component {

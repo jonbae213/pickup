@@ -5,6 +5,7 @@ import errorsReducer from './errors_reducer';
 import uiReducer from './ui_reducer';
 
 const rootReducer = combineReducers({
+  entities: entitiesReducer,
   session: sessionReducer,
   errors: errorsReducer,
   ui: uiReducer,
