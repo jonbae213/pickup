@@ -1,5 +1,4 @@
 import React from 'react';
-import { loginUser } from '../../actions/user_actions';
 
 class AccountForm extends React.Component {
   constructor(props) {
@@ -21,8 +20,8 @@ class AccountForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // e.preventDefault();
-    this.props.submitForm(this.state);
+    this.props.submitForm(this.state)
+      .then(() => this.props.history.push('/home'));
   }
 
   renderErrors() {
@@ -39,7 +38,8 @@ class AccountForm extends React.Component {
   }
 
   demoUser() {
-    this.props.loginUser({email: "tester1@gmail.com", password: "applepie"});
+    this.props.loginUser({email: "tester1@gmail.com", password: "applepie"})
+      // .then(this.props.history.push('/home'));
   }
 
   switchForm() {

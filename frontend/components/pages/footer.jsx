@@ -13,7 +13,7 @@ class Footer extends React.Component {
         </section>
         <section className="footer-linkedin">
           <h3>FOLLOW ME</h3>
-          <a href="www.linkedin.com/in/jonathan-bae-b9099118a">Jonathan Bae</a>
+          <a href="https://linkedin.com/in/jonathan-bae-b9099118a">Jonathan Bae</a>
         </section>
       </section>
     )

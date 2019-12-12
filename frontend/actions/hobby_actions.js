@@ -8,6 +8,6 @@ export const receiveAllHobbies = hobbies => ({
 })
 
 export const getAllHobbies = () => dispatch => {
-  fetchAllHobbies()
+  return fetchAllHobbies()
     .then((hobbies) => dispatch(receiveAllHobbies(hobbies)));
 }

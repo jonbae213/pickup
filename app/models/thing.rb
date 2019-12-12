@@ -17,4 +17,5 @@ class Thing < ApplicationRecord
   validates :name, uniqueness: true
 
   belongs_to :hobby
+  has_many :reviews
 end

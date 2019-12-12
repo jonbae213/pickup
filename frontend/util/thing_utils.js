@@ -4,3 +4,10 @@ export const fetchAllThings = () => {
     url: "/api/things"
   })
 }
+
+export const fetchThingReviews = (thingId) => {
+  return $.ajax({
+    method: "GET",
+    url: `/api/things/${thingId}`
+  })
+}

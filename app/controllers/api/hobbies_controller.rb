@@ -5,4 +5,30 @@ class Api::HobbiesController < ApplicationController
     render :index  
   end
 
+  def follow
+    user_hobby = UserHobby.new({
+      hobby_id: params[:hobby_id],
+      user_id: current_user.id
+    })
+    if user_hobby.save
+      @user = current_user
+      render '/api/users/users'
+    else
+      render user_hobby.errors.full_messages
+    end
+  end
+
+  def unfollow
+    user_hobby = UserHobby.find_by({
+      hobby_id: params[:hobby_id],
+      user_id: current_user.id
+    })
+    if user_hobby.destroy
+      @user = current_user
+      render '/api/users/users'
+    else
+      render user_hobby.errors.full_messages
+    end
+  end
+
 end

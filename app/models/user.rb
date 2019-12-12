@@ -21,6 +21,13 @@ class User < ApplicationRecord
   attr_reader :password
   after_initialize :ensure_session_token
 
+  has_many :user_things
+  has_many :user_hobbies
+  has_many :reviews
+
+  has_many :things, through: :user_things
+  has_many :hobbies, through: :user_hobbies
+
   def self.find_by_credentials(email, password) 
     @user = User.find_by({ email: email })
     return @user if @user && @user.is_password?(password)

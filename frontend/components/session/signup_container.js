@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import { createNewUser, loginUser } from '../../actions/user_actions';
-import AccountForm from './_account_form';
+import AccountForm from './account_form';
 import { openModal } from '../../actions/modal_actions';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => ({
   errors: state.errors.session,
@@ -16,5 +17,5 @@ const mapDispatchToProps = dispatch => ({
   openModal: (modal) => dispatch(openModal(modal))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AccountForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AccountForm));
 

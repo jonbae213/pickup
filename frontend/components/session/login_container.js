@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import { loginUser } from '../../actions/user_actions';
-import AccountForm from './_account_form';
+import AccountForm from './account_form';
 import { withRouter } from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions';
+import { getAllHobbies } from '../../actions/hobby_actions';
 
 const mapStateToProps = state => ({
   errors: state.errors.session,
@@ -14,7 +15,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   submitForm: formUser => dispatch(loginUser(formUser)),
   loginUser: formUser => dispatch(loginUser(formUser)),
-  openModal: (modal) => dispatch(openModal(modal))
+  openModal: (modal) => dispatch(openModal(modal)),
+  fetchAllHobbies: () => dispatch(getAllHobbies()),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AccountForm));

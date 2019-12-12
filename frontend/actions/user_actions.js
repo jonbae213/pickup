@@ -5,9 +5,9 @@ export const LOGOUT_USER = "LOGOUT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_THE_USER = "RECEIVE_THE_USER";
 
-const receiveCurrentUser = user => ({
+const receiveCurrentUser = payload => ({
   type: RECEIVE_CURRENT_USER,
-  user
+  payload
 });
 
 const logoutTheUser = () => ({
@@ -19,37 +19,37 @@ const receiveSessionErrors = (errors) => ({
   errors: errors
 });
 
-const receiveTheUser = user => ({
+const receiveTheUser = payload => ({
   type: RECEIVE_THE_USER,
-  user
+  payload
 });
 
 export const createNewUser = formUser => dispatch => {
-  UserUtil.signup(formUser)
-    .then(user => dispatch(receiveCurrentUser(user)),
+  return UserUtil.signup(formUser)
+    .then(payload => dispatch(receiveCurrentUser(payload)),
     (err) => dispatch(receiveSessionErrors(err.responseJSON)))
 };
 
 export const loginUser = formUser => dispatch => {
-  UserUtil.login(formUser)
-    .then(user => dispatch(receiveCurrentUser(user)),
+  return UserUtil.login(formUser)
+    .then(payload => dispatch(receiveCurrentUser(payload)),
     (err) => dispatch(receiveSessionErrors(err.responseJSON)))
 };
 
 export const logoutUser = () => dispatch => {
-  UserUtil.logout()
+  return UserUtil.logout()
     .then(() => dispatch(logoutTheUser()),
     (err) => dispatch(receiveSessionErrors(err.responseJSON)))
 };
 
 export const updateUser = (formUser) => dispatch => {
-  UserUtil.updateUser(formUser)
-    .then(user => dispatch(receiveCurrentUser(user)),
+  return UserUtil.updateUser(formUser)
+    .then(payload => dispatch(receiveCurrentUser(payload)),
     err => dispatch(receiveSessionErrors(err.responseJSON)))
 };
 
 export const getUser = userId => dispatch => {
-  UserUtil.fetchUser(userId)
-    .then(user => dispatch(receiveTheUser(user)),
+  return UserUtil.fetchUser(userId)
+    .then(payload => dispatch(receiveTheUser(payload)),
     err => dispatch(receiveSessionErrors(err.responseJSON)))
 };

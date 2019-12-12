@@ -9,6 +9,7 @@ export default () => (
   <>
     <Modal />
     <Navbar />
+    {/* <ProtectedRoute exact path="/home" component={}/> */}
     <AuthRoute path="/" component={SplashImg} />
     <Footer />
   </>
