@@ -50,6 +50,8 @@ class AccountForm extends React.Component {
     return (
       <>
         <h2>{this.props.formType}</h2>
+        <button onClick={this.demoUser}>DEMO USER</button>
+        <div className="signin-login-divider">OR</div>
         <div className="errors-container">{this.renderErrors()}</div>
         <form>
           <div className="form-row">
@@ -72,7 +74,6 @@ class AccountForm extends React.Component {
           </div>
           <button onClick={this.handleSubmit}>{this.props.formType.toUpperCase()}</button>
         </form>
-        <button onClick={this.demoUser}>DEMO USER</button>
         <span>
           <div>{this.props.text}</div>
           <button onClick={this.switchForm}>{this.props.otherFormType.toUpperCase()}</button>    

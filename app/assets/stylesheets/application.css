@@ -16,7 +16,43 @@
 
 body {
   font-family: Gordita, Helvetica, Arial, Verdana;
-  background: black;
+  background: white;
   width: 100%;
   position: absolute;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  height: 300px;
+  width: 100%;
+  justify-content: left;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+.footer > section {
+  padding: 100px;
+}
+
+.footer a {
+  color: white;
+  padding-bottom: 20px;
+}
+
+.footer .footer-logo {
+  width: 150px;
+  height: 40px;
+  padding-left: 25px;
+  padding-top: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.footer-about, .footer-linkedin {
+  transform: translateY(-90px);
 }

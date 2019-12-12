@@ -5,9 +5,4 @@ class Api::HobbiesController < ApplicationController
     render :index  
   end
 
-  def show
-    @hobby = Hobby.includes(:items).find_by(id: params[:id])
-    render :show
-  end
-
 end

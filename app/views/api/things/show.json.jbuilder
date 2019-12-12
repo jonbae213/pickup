@@ -1,1 +1,0 @@
-json.partial! 'api/shared/things', thing: @thing

@@ -4,8 +4,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: #F1EEE7;
-  opacity: 0.9;
+  background-color:rgba(#F1EEE7, 0, 0, .5);
   z-index: 10;
 }
 
@@ -15,10 +14,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #FFFF;
+  background-color: #ffffff;
   width: 450px;
-  height: 500px;
+  height: 600px;
   z-index: 11;
+  box-shadow: 1px 1px 1px 1px lightgray;
 }
 
 form {
@@ -59,9 +59,12 @@ input {
   background-color: black;
   color: white;
   margin: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .errors-container {
   color: red;
   list-style-type: none;
 }
+
