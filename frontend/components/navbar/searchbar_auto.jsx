@@ -59,6 +59,7 @@ class SearchbarAuto extends React.Component {
   }
 
   filterSuggs(suggArr, userInput) {
+    debugger
     return (
       suggArr.filter((sugg) => 
         sugg.toLowerCase().indexOf(userInput.toLowerCase()))

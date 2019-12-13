@@ -1,6 +1,7 @@
 import Modal from '../modal/modal';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchbarContainer from './searchbar_auto_container';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class Navbar extends React.Component {
     return (
       <>
         <div className="searchbar">
-          $searchbar$
+          <SearchbarContainer />
         </div>
         <div className="navbar-dropdown">
           <button className="navbar-dropdown-btn">{
@@ -52,7 +53,7 @@ class Navbar extends React.Component {
     let loggedIn;
     
     if (this.props.currentUser) {
-      loggedIn= this.signedInNav();
+      loggedIn = this.signedInNav();
     } else {
       loginSignup = <nav className="login-signup">
         <div className="signup">
