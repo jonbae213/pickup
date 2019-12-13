@@ -1,10 +1,12 @@
 @things.each do |thing|
   json.set! thing.id do 
     json.extract! thing, :id, :name, :price, :description
-    thing.reviews.each do |review|
-      json.review.id do 
-        json.extract! review, :body, :id, :stars
+    json.review_ids do 
+      review_arr = []
+      thing.reviews.each do |review|
+        review_arr << review.id
       end
+      json.array! review_arr
     end
   end
 end

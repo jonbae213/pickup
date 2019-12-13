@@ -4,6 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 import { getAllThings } from './actions/thing_actions';
 import { getAllHobbies } from './actions/hobby_actions';
+import { getThingReviews } from './actions/thing_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
  
@@ -22,5 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.dispatch = store.dispatch;
   window.getAllThings = getAllThings;
   window.getAllHobbies = getAllHobbies;
+  window.getThingReviews = getThingReviews;
   ReactDOM.render(<Root store={store}/>, root)
 });

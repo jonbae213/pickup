@@ -29,16 +29,21 @@ class Navbar extends React.Component {
 
   signedInNav() {
     return (
-      <div className="navbar-dropdown">
-        <button className="navbar-dropdown-btn">{
-          this.props.currentUser.email.slice(0,1).toUpperCase()
-        }</button>
-        <div className="navbar-dropdown-content">
-          <Link to="/profile">Profile</Link>
-          <Link to="/saved">Saved</Link>
-          <button onClick={this.handleLogout}>Log Out</button>
+      <>
+        <div className="searchbar">
+          $searchbar$
         </div>
-      </div>
+        <div className="navbar-dropdown">
+          <button className="navbar-dropdown-btn">{
+            this.props.currentUser.email.slice(0,1).toUpperCase()
+          }</button>
+          <div className="navbar-dropdown-content">
+            <Link to="/profile">Profile</Link>
+            <Link to="/saved">Saved</Link>
+            <button onClick={this.handleLogout}>Log Out</button>
+          </div>
+        </div>
+      </>
     ) 
   }
   
@@ -47,7 +52,6 @@ class Navbar extends React.Component {
     let loggedIn;
     
     if (this.props.currentUser) {
-      
       loggedIn= this.signedInNav();
     } else {
       loginSignup = <nav className="login-signup">

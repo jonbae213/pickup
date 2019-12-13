@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 const HobbiesIndex = ({ hobbies }) => {
   const hobbyList = hobbies.map((hobby) => (
@@ -20,4 +21,4 @@ const msp = state => {
   }
 }
 
-export default connect(msp)(HobbiesIndex);
+export default withRouter(connect(msp)(HobbiesIndex));

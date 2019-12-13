@@ -21,6 +21,10 @@ body {
   position: absolute;
 }
 
+.app {
+  display: flex;
+}
+
 .footer {
   position: fixed;
   bottom: 0;

@@ -3,10 +3,11 @@ import { logoutUser } from '../../actions/user_actions';
 import { connect } from 'react-redux';
 import Navbar from './navbar';
 import HobbiesIndex from '../hobbies/hobbies_index';
+import SearchbarAuto from './searchbar_auto';
 
 const msp = state => ({
   currentUser: state.session.currentUser,
-  hobbiesIndex: HobbiesIndex
+  hobbiesIndex: HobbiesIndex,
 });
 
 const mdp = dispatch => ({

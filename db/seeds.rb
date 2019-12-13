@@ -6,14 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
-Thing.destroy_all
-Hobby.destroy_all
 UserHobby.destroy_all
 UserThing.destroy_all
 Review.destroy_all
-
-
+User.destroy_all
+Thing.destroy_all
+Hobby.destroy_all
 
 demouser = User.create({email: "tester1@gmail.com", password:"applepie"})
 demohobby = Hobby.create({name: "Mechanical Keyboards", description: "Our community is filled with keyboard enthusiasts who join for the key mechanisms, sounds, and feels of mechanical keyboards! We welcome any who are interested!"})

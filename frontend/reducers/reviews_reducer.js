@@ -1,5 +1,5 @@
 import { RECEIVE_THING } from '../actions/thing_actions';
-import { RECEIVE_CURRENT_USER, RECEIVE_THE_USER } from '../actions/user_actions';
+import { RECEIVE_CURRENT_USER, RECEIVE_THE_USER, LOGOUT_USER } from '../actions/user_actions';
 
 export const reviewsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -10,6 +10,8 @@ export const reviewsReducer = (state = {}, action) => {
       return action.payload.reviews;
     case RECEIVE_THE_USER:
       return action.payload.reviews;
+    case LOGOUT_USER:
+      return {};
     default:
       return state;
   }
