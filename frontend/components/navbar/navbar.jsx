@@ -47,7 +47,7 @@ class Navbar extends React.Component {
     let loggedIn;
     
     if (this.props.currentUser) {
-      debugger
+      
       loggedIn= this.signedInNav();
     } else {
       loginSignup = <nav className="login-signup">
