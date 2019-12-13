@@ -1,9 +1,6 @@
 import Modal from '../modal/modal';
 import React from 'react';
-import { closeModal } from '../../actions/modal_actions';
-import { Route, Link } from 'react-router-dom';
-import { login } from '../../util/user_util';
-import HobbiesIndex from '../hobbies/hobbies_index';
+import { Link } from 'react-router-dom';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -32,16 +29,26 @@ class Navbar extends React.Component {
 
   signedInNav() {
     return (
-      <button onClick={this.handleLogout}>Log Out</button>
+      <div className="navbar-dropdown">
+        <button className="navbar-dropdown-btn">{
+          this.props.currentUser.email.slice(0,1).toUpperCase()
+        }</button>
+        <div className="navbar-dropdown-content">
+          <Link to="/profile">Profile</Link>
+          <Link to="/saved">Saved</Link>
+          <button onClick={this.handleLogout}>Log Out</button>
+        </div>
+      </div>
     ) 
   }
   
   render() {
     let loginSignup;
-    let loggedOut;
+    let loggedIn;
     
     if (this.props.currentUser) {
-      loggedOut = this.signedInNav();
+      debugger
+      loggedIn= this.signedInNav();
     } else {
       loginSignup = <nav className="login-signup">
         <div className="signup">
@@ -56,9 +63,9 @@ class Navbar extends React.Component {
       <nav className="header-nav-bar">
         <img className="logo" src={window.logo} />
         {loginSignup}
-        {loggedOut}
+        {loggedIn}
       </nav>
-    )
+    );
   }
 }
 

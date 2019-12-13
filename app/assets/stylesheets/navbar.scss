@@ -30,7 +30,7 @@
   margin-right: 15px;
   font-size: 16px;
   font-weight: 900;
-  font-family: 'stratos', Helvetica, arial, verdana;
+  font-family: "stratos", Helvetica, arial, verdana;
   background-color: transparent;
   color: white;
 }
@@ -42,3 +42,38 @@
 .login-signup button:hover {
   border-bottom: 3px solid purple;
 }
+
+.navbar-dropdown-btn {
+  color: white;
+  border: none;
+  font-size: 24px;
+  background-color: purple;
+}
+
+.navbar-dropdown {
+  position: relative;
+  display: inline-block;
+  .navbar-dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+.navbar-dropdown a {
+  color: lightgray;
+  padding-bottom: 30px;
+  display: block;
+  
+}
+
+.navbar-dropdown:hover .navbar-dropdown-content {
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
+  right: 0;
+  padding-right: 100px;
+}
+
