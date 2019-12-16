@@ -3,7 +3,7 @@ import { logoutUser } from '../../actions/user_actions';
 import { connect } from 'react-redux';
 import Navbar from './navbar';
 import HobbiesIndex from '../hobbies/hobbies_index';
-import SearchbarAuto from './searchbar_auto';
+import { withRouter } from 'react-router-dom';
 
 const msp = state => ({
   currentUser: state.session.currentUser,
@@ -15,4 +15,4 @@ const mdp = dispatch => ({
   openModal: modal => dispatch(openModal(modal))
 });
 
-export default connect(msp, mdp)(Navbar);
+export default withRouter(connect(msp, mdp)(Navbar));

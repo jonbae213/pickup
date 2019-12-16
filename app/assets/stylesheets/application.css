@@ -23,6 +23,7 @@ body {
 
 .app {
   display: flex;
+  justify-content: space-between;
 }
 
 .footer {
@@ -59,4 +60,10 @@ body {
 
 .footer-about, .footer-linkedin {
   transform: translateY(-90px);
+}
+
+img {
+  width: 150px;
+  height: 40px;
+  padding-left: 15px;
 }

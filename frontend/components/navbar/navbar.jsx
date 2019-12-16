@@ -10,7 +10,11 @@ class Navbar extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
     this.handleSignup = this.handleSignup.bind(this);
-    this.signedInNav = this.signedInNav.bind(this);
+    this.signedInNavRight = this.signedInNavRight.bind(this);
+    this.handleSearchbar = this.handleSearchbar.bind(this);
+    this.signedInNavLeft = this.signedInNavLeft.bind(this);
+    this.handleHobbies = this.handleHobbies.bind(this);
+    this.handleView = this.handleView.bind(this);
   }
   
   handleLogout(e) {
@@ -28,12 +32,27 @@ class Navbar extends React.Component {
     this.props.openModal('Sign Up');
   }
 
-  signedInNav() {
+  handleSearchbar(e) {
+    e.preventDefault();
+    this.props.openModal('Searchbar');
+  }
+
+  handleView(e) {
+    e.preventDefault();
+    this.props.history.push('/all-hobbies');
+  }
+
+  handleHobbies(e) {
+    e.preventDefault();
+    this.props.history.push('/my-hobbies');
+  }
+
+  signedInNavRight() {
     return (
       <>
-        <div className="searchbar">
-          <SearchbarContainer />
-        </div>
+        <button className="searchbar-btn" onClick={this.handleSearchbar}>
+          <img className="searchbar-icon" src={window.searchIcon} />
+        </button>
         <div className="navbar-dropdown">
           <button className="navbar-dropdown-btn">{
             this.props.currentUser.email.slice(0,1).toUpperCase()
@@ -47,13 +66,27 @@ class Navbar extends React.Component {
       </>
     ) 
   }
+
+  signedInNavLeft() {
+    return (
+      <>
+        <button className="view-btn" onClick={this.handleView}>
+          VIEW
+        </button>
+        <button className="hobbies-btn" onClick={this.handleHobbies}>
+          HOBBIES
+        </button>
+      </>
+    );
+  }
   
   render() {
     let loginSignup;
-    let loggedIn;
-    
+    let loggedInRight;
+    let loggedInLeft;
     if (this.props.currentUser) {
-      loggedIn = this.signedInNav();
+      loggedInRight = this.signedInNavRight();
+      loggedInLeft = this.signedInNavLeft();
     } else {
       loginSignup = <nav className="login-signup">
         <div className="signup">
@@ -66,9 +99,14 @@ class Navbar extends React.Component {
     }
     return (
       <nav className="header-nav-bar">
-        <img className="logo" src={window.logo} />
+        <section className="navbar-left">
+          <img className="logo" src={window.logo} />
+          {loggedInLeft}
+        </section>
         {loginSignup}
-        {loggedIn}
+        <section className="navbar-right">
+          {loggedInRight}
+        </section>
       </nav>
     );
   }

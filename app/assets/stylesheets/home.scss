@@ -1,0 +1,9 @@
+.things-index {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  .things-in-index {
+    width: 33%;
+    display: inline-block;
+  }
+}

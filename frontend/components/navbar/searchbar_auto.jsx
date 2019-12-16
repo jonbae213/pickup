@@ -18,7 +18,7 @@ class SearchbarAuto extends React.Component {
   onChange(e) {
     const userInput = e.currentTarget.value;
     const filtered = this.filterSuggs(this.props.suggestions, userInput);
-
+    
     this.setState({
       activeSuggIndex: 0,
       filteredSuggArr: filtered,
@@ -42,7 +42,7 @@ class SearchbarAuto extends React.Component {
     if (e.keyCode === 13) {
       this.setState({
         activeSuggIndex: 0,
-        show: false,
+        show: true,
         userInput: filteredSuggArr[activeSuggIndex]
       });
     } else if (e.keyCode === 38) {
@@ -59,41 +59,40 @@ class SearchbarAuto extends React.Component {
   }
 
   filterSuggs(suggArr, userInput) {
-    debugger
     return (
       suggArr.filter((sugg) => 
-        sugg.toLowerCase().indexOf(userInput.toLowerCase()))
+        sugg.toLowerCase().includes(userInput.toLowerCase()))
     );
   }
 
   render() {
     let suggestionList;
-
-    if (this.props.show && this.props.userInput) {
+    
+    // if (this.state.show && this.state.userInput) {
       suggestionList = (
-        <ul class="autocomplete-suggestions">
-          {this.props.filteredSuggArr.map((suggestion, i) => {
+        <ul className="autocomplete-suggestions">
+          {this.state.filteredSuggArr.map((suggestion, i) => {
             let className;
-            if (i === this.props.activeSuggIndex) {
+            
+            if (i === this.state.activeSuggIndex) {
               className = 'suggestion-active'
             }
-
             return (
-              <li className={ className } key={i} onClick={this.onClick}>
+              <li className={ className } key={i} >
                 {suggestion}
               </li>
             )
           })}
         </ul>
       );
-    } 
+    // } 
 
     return (
       <>
         <input type="text"
           onChange={this.onChange}
           onKeyDown={this.onKeyDown}
-          value={this.props.userInput}
+          value={this.state.userInput}
         />
         {suggestionList}
       </>
