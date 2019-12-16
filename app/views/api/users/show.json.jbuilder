@@ -23,10 +23,14 @@ json.user do
   end
 end
 
-json.reviews do 
-  @user.reviews.each do |review|
-    json.set! review.id do 
-      json.extract! review, :body, :stars, :id
+json.reviews do
+  if @user.reviews.length === 0
+    []
+  else
+    @user.reviews.each do |review|
+      json.set! review.id do 
+        json.extract! review, :body, :stars, :id
+      end
     end
   end
 end

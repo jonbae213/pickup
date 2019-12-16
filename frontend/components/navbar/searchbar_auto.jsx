@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 // inspiration from alligator.io/react/react-autocomplete/
 class SearchbarAuto extends React.Component {
@@ -38,11 +38,11 @@ class SearchbarAuto extends React.Component {
 
   onKeyDown(e) {
     const { activeSuggIndex, filteredSuggArr } = this.state;
-
+   
     if (e.keyCode === 13) {
       this.setState({
         activeSuggIndex: 0,
-        show: true,
+        show: false,
         userInput: filteredSuggArr[activeSuggIndex]
       });
     } else if (e.keyCode === 38) {
@@ -51,7 +51,8 @@ class SearchbarAuto extends React.Component {
       }
       this.setState({ activeSuggIndex: activeSuggIndex - 1 });
     } else if (e.keyCode === 40) {
-      if (activeSuggIndex - 1 === filteredSuggArr.length ) {
+      debugger;
+      if (activeSuggIndex - 1 !== filteredSuggArr.length ) {
         return;
       }
       this.setState({ activeSuggIndex: activeSuggIndex + 1 });
@@ -68,12 +69,11 @@ class SearchbarAuto extends React.Component {
   render() {
     let suggestionList;
     
-    // if (this.state.show && this.state.userInput) {
+    if (this.state.show && this.state.userInput) {
       suggestionList = (
         <ul className="autocomplete-suggestions">
           {this.state.filteredSuggArr.map((suggestion, i) => {
             let className;
-            
             if (i === this.state.activeSuggIndex) {
               className = 'suggestion-active'
             }
@@ -85,7 +85,7 @@ class SearchbarAuto extends React.Component {
           })}
         </ul>
       );
-    // } 
+    } 
 
     return (
       <>

@@ -1,7 +1,7 @@
 class Api::HobbiesController < ApplicationController
 
   def index
-    @hobbies = Hobby.all
+    @hobbies = Hobby.includes(:things).all
     render :index  
   end
 

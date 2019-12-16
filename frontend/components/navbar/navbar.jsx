@@ -15,8 +15,14 @@ class Navbar extends React.Component {
     this.signedInNavLeft = this.signedInNavLeft.bind(this);
     this.handleHobbies = this.handleHobbies.bind(this);
     this.handleView = this.handleView.bind(this);
+    this.goHome = this.goHome.bind(this);
   }
   
+  goHome(e) {
+    e.preventDefault();
+    this.props.history.push('/home');
+  }
+
   handleLogout(e) {
     e.preventDefault();
     this.props.logoutUser();
@@ -100,7 +106,9 @@ class Navbar extends React.Component {
     return (
       <nav className="header-nav-bar">
         <section className="navbar-left">
-          <img className="logo" src={window.logo} />
+          <button className="home-btn" onClick={this.goHome}>
+            <img className="logo" src={window.logo} />
+          </button>
           {loggedInLeft}
         </section>
         {loginSignup}

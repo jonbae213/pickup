@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
   
   def show
-    @user = User.includes(:reviews).includes(:things).includes(:hobbies).find_by(id: params[:id])
+    @user = User.includes(:hobbies, :reviews, :things).find_by(id: params[:id])
     render :show
   end
 
