@@ -1,6 +1,28 @@
-.splash-img-container {
+.splash-page {
+  width: 100%;
+}
+
+.welcome-content {
+  position: absolute;
+  top: 160px;
+  left: 90px;
+  display: block;
+  background-color: white;
+  width: 425px;
+  padding: 25px;
+  z-index: 2;
+}
+
+.splash-img {
   margin: 0;
   height: 600px;
-  width: 100%;
-  float: right;
+  width: 900px;
+  position: relative;
+  right: 0;
+}
+
+.splash-img-container {
+  width: 900px;
+  height: 600px;
+  right: 0;
 }

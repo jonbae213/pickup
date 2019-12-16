@@ -1,6 +1,15 @@
 import React from 'react';
+import Link from 'react-router-dom';
 
 class Home extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     img_index: 0,
+  //     content_index: 0,
+  //   }
+  // }
+
   render() {
     let things;
     let thingElements;
@@ -21,33 +30,43 @@ class Home extends React.Component {
       });
       
       thingElements = things.map((thing, i) => {
-        return (
-          <li className="thing-item" key={i}>
-            <h2 className="thing-name">{thing.name}</h2>
-            <h3 className="thing-price">${thing.price}</h3>
-            <h3 className="review-count">{thing.review_ids.length}</h3>
-          </li>
-        );
+        if (i < 3) {
+          return (
+            <li className="thing-item" key={i}>
+              <h2 className="thing-name">{thing.name}</h2>
+              <h3 className="thing-price">${thing.price}</h3>
+              <h3 className="review-count">{thing.review_ids.length}</h3>
+            </li>
+          );
+        }
       })
     } else {
       things = Object.values(this.props.things);
       thingElements = things.map((thing, i) => {
-        return (
-          <li className="thing-item" key={i}>
-            <h2 className="thing-name">{thing.name}</h2>
-            <h3 className="thing-price">${thing.price}</h3>
-            <h3 className="review-count">{thing.review_ids.length}</h3>
-          </li>
-        );
+        if (i < 3) {
+          return (
+            <li className="thing-item" key={i}>
+              <h2 className="thing-name">{thing.name}</h2>
+              <h3 className="thing-price">${thing.price}</h3>
+              <h3 className="review-count">{thing.review_ids.length}</h3>
+            </li>
+          );
+        }
       })
     }
   
     
 
     return (
-      <ul className="home-things-index">
-        {thingElements}
-      </ul>
+      <main className="home-section">
+        <section className="home-things-header">
+          <h1> RECOMMENDED THINGS </h1>
+          <h2>SEE ALL</h2>
+        </section>
+        <ul className="home-things-index">
+          {thingElements}
+        </ul>
+      </main>
     );
   }
 

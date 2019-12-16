@@ -55,7 +55,7 @@ class Navbar extends React.Component {
 
   signedInNavRight() {
     return (
-      <>
+      <section className="navbar-right">
         <button className="searchbar-btn" onClick={this.handleSearchbar}>
           <img className="searchbar-icon" src={window.searchIcon} />
         </button>
@@ -69,19 +69,43 @@ class Navbar extends React.Component {
             <button onClick={this.handleLogout}>Log Out</button>
           </div>
         </div>
-      </>
+      </section>
     ) 
   }
 
   signedInNavLeft() {
+    let hobbies;
+    if (Object.values(this.props.hobbies).length > 0 && this.props.currentUser.thing_ids.length > 0) {
+      
+      hobbies = this.props.currentUser.hobby_ids.map(hobbyId => {
+        return (
+          <li className="hobbies-dropdown" key={hobbyId}>
+            <Link to={`/${this.props.hobbies[hobbyId].name}`}>
+              {this.props.hobbies[hobbyId].name}
+            </Link>
+          </li>
+        );
+      });
+    }
+
     return (
       <>
-        <button className="view-btn" onClick={this.handleView}>
-          VIEW
-        </button>
-        <button className="hobbies-btn" onClick={this.handleHobbies}>
-          HOBBIES
-        </button>
+        <div className="view-dropdown">
+          <button className="view-dropdown-btn">
+            VIEW
+          </button>
+          <ul className="view-dropdown-content">
+            {hobbies}
+          </ul>
+        </div>
+        <div className="hobbies-dropdown">
+          <button className="hobbies-dropdown-btn">
+            HOBBIES
+          </button>
+          <ul className="hobbies-dropdown-content">
+            {hobbies}
+          </ul>
+        </div>
       </>
     );
   }
@@ -112,9 +136,7 @@ class Navbar extends React.Component {
           {loggedInLeft}
         </section>
         {loginSignup}
-        <section className="navbar-right">
-          {loggedInRight}
-        </section>
+        {loggedInRight}
       </nav>
     );
   }

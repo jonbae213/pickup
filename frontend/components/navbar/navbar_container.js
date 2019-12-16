@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 
 const msp = state => ({
   currentUser: state.session.currentUser,
-  hobbiesIndex: HobbiesIndex,
+  hobbies: state.entities.hobbies,
 });
 
 const mdp = dispatch => ({

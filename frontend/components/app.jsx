@@ -12,6 +12,7 @@ export default () => (
     <Modal />
     <Navbar />
     <main className="app">
+      {/* <ProtectedRoute path="/all-hobbies" component={AllHobbiesContainer} /> */}
       <ProtectedRoute path="/home" component={HomeContainer}/>
       <AuthRoute path="/" component={SplashImg} />
     </main>
