@@ -7,7 +7,7 @@ import Footer from './pages/footer';
 import HomeContainer from './pages/home_container';
 import { Route } from 'react-router-dom';
 import AllHobbiesContainer from './hobbies/all_hobbies_container';
-
+import MyHobbiesContainer from './hobbies/my_hobbies_container';
 
 export default () => (
   <>
@@ -18,6 +18,9 @@ export default () => (
       <AuthRoute path="/" component={SplashImg} />
       <Route path="/all-hobbies" component={AllHobbiesContainer} />
       {/* <Route path="/things/:thingId" component={ThingPage} /> */}
+      <Route path="/my-hobbies" component={MyHobbiesContainer} />
+      {/* <Route path="/hobbies/:hobbiesId" component={HobbiesPage} /> */}
+      {/* <ProtectedRoute path="/profile" component={ProfileContainer} /> */}
     </main>
     <Footer />
   </>

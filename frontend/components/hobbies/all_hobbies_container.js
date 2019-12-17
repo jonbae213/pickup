@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { saveTheThing, unsaveTheThing } from '../../actions/hobby_actions';
-import AllHobbies from './all_hobbies';
+import HobbiesPage from './hobbies_page';
 
 const msp = state => ({
   hobbies: state.entities.hobbies,
-  things: state.entities.things
+  things: state.entities.things,
+  page: 'all-hobbies'
 });
 
 const mdp = dispatch => ({
@@ -13,5 +14,5 @@ const mdp = dispatch => ({
   unsaveTheThing: (thingId) => dispatch(unsaveTheThing(thingId))
 });
 
-export default withRouter(connect(msp, mdp)(AllHobbies))
+export default withRouter(connect(msp, mdp)(HobbiesPage));
 

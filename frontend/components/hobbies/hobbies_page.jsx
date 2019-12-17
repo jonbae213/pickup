@@ -4,19 +4,21 @@ export default class AllHobbies extends React.Component {
   constructor(props) {
     super(props);
 
-    this.onClick = this.onClick.bind(this);
+    // this.saveAndUnsave = this.saveAndUnsave.bind(this);
   }
   
-  onClick(e) {
+  saveAndUnsave(e) {
     e.preventDefault();
     this.props.history.push(`/things/${e.target.idnum}`)
   }
 
   render() {
-    let thingItems = Object.values(this.props.things).map(thing => {
+    let things = this.props.page === 'my-hobbies' ? this.props.things : Object.values(this.props.things)
+    let thingItems = things.map(thing => {
       return (
         <li className="all-things-item" key={thing.id} idnum={thing.id}>
           <h2 className="thing-name">{thing.name}</h2>
+          {/* <button onClick={this.saveAndUnsave}>{this.state.saved}</button> */}
           <h3 className="thing-price">{thing.price}</h3>
           <h3 className="review-count">{thing.review_ids.length}</h3>
         </li>
