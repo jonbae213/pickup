@@ -28,12 +28,12 @@ export const getThingReviews = (thingId) => dispatch => {
     .then((reviews) => dispatch(receiveThing(reviews)));
 }
 
-export const saveThing = thingId => dispatch => {
+export const saveTheThing = thingId => dispatch => {
   return saveThing(thingId)
     .then(user => dispatch(receiveCurrentUser(user)));
 }
 
-export const unsaveThing = thingId => dispatch => {
+export const unsaveTheThing = thingId => dispatch => {
   return unsaveThing(thingId)
     .then(user => dispatch(receiveCurrentUser(user)));
 }

@@ -46,6 +46,7 @@ class Home extends React.Component {
         if (i < 3) {
           return (
             <li className="thing-item" key={i}>
+              <i className="far fa-bookmark"></i>
               <h2 className="thing-name">{thing.name}</h2>
               <h3 className="thing-price">${thing.price}</h3>
               <h3 className="review-count">{thing.review_ids.length}</h3>

@@ -85,7 +85,7 @@ class Navbar extends React.Component {
       
       hobbies = this.props.currentUser.hobby_ids.map(hobbyId => {
         return (
-          <div className="dropdown-list-items">
+          <div className="dropdown-list-items" key={hobbyId}>
             <Link to={`/${this.props.hobbies[hobbyId].name.toLowerCase().split(' ').join('-')}`}>
               {this.props.hobbies[hobbyId].name}
             </Link>
@@ -97,7 +97,7 @@ class Navbar extends React.Component {
     return (
       <>
         <div className="view-dropdown">
-          <button className="view-dropdown-btn" onCLick={this.handleView}>
+          <button className="view-dropdown-btn" onClick={this.handleView}>
             VIEW
           </button>
           <div className="view-dropdown-content">
