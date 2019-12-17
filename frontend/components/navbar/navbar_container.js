@@ -2,7 +2,6 @@ import { openModal } from '../../actions/modal_actions';
 import { logoutUser } from '../../actions/user_actions';
 import { connect } from 'react-redux';
 import Navbar from './navbar';
-import HobbiesIndex from '../hobbies/hobbies_index';
 import { withRouter } from 'react-router-dom';
 
 const msp = state => ({
