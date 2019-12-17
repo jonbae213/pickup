@@ -36,7 +36,9 @@
 }
 
 .login-signup button:hover {
-  border-bottom: 3px solid purple;
+  text-decoration: underline;
+  text-decoration-color: purple;
+  transition-property: text-decoration;
 }
 
 .navbar-dropdown-btn {
@@ -60,6 +62,7 @@
     position: absolute;
     border: 1px solid lightgray;
     z-index: 1;
+    background-color: white;
   }
 }
 
@@ -112,4 +115,28 @@
 .searchbar-icon {
   height: 20px;
   width: 20px;
+}
+
+.view-dropdown-content, .hobbies-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 30px;
+}
+
+.view-dropdown:hover {
+  .view-dropdown-content {
+    display: block;
+  }
+}
+
+.hobbies-dropdown:hover {
+  .hobbies-dropdown-content {
+    display: block;
+  }
+}
+
+.dropdown-list-items:hover {
+  text-decoration: underline;
+  text-decoration-color: purple;
+  transition-property: all;
 }

@@ -16,6 +16,7 @@ class Navbar extends React.Component {
     this.handleHobbies = this.handleHobbies.bind(this);
     this.handleView = this.handleView.bind(this);
     this.goHome = this.goHome.bind(this);
+    this.handleProfile = this.handleProfile.bind(this);
   }
   
   goHome(e) {
@@ -48,6 +49,11 @@ class Navbar extends React.Component {
     this.props.history.push('/all-hobbies');
   }
 
+  handleProfile(e) {
+    e.preventDefault();
+    this.props.history.push('/profile')
+  }
+
   handleHobbies(e) {
     e.preventDefault();
     this.props.history.push('/my-hobbies');
@@ -60,7 +66,7 @@ class Navbar extends React.Component {
           <img className="searchbar-icon" src={window.searchIcon} />
         </button>
         <div className="navbar-dropdown">
-          <button className="navbar-dropdown-btn">{
+          <button className="navbar-dropdown-btn" onClick={this.handleProfile}>{
             this.props.currentUser.email.slice(0,1).toUpperCase()
           }</button>
           <div className="navbar-dropdown-content">
@@ -79,11 +85,11 @@ class Navbar extends React.Component {
       
       hobbies = this.props.currentUser.hobby_ids.map(hobbyId => {
         return (
-          <li className="hobbies-dropdown" key={hobbyId}>
-            <Link to={`/${this.props.hobbies[hobbyId].name}`}>
+          <div className="dropdown-list-items">
+            <Link to={`/${this.props.hobbies[hobbyId].name.toLowerCase().split(' ').join('-')}`}>
               {this.props.hobbies[hobbyId].name}
             </Link>
-          </li>
+          </div>
         );
       });
     }
@@ -91,20 +97,20 @@ class Navbar extends React.Component {
     return (
       <>
         <div className="view-dropdown">
-          <button className="view-dropdown-btn">
+          <button className="view-dropdown-btn" onCLick={this.handleView}>
             VIEW
           </button>
-          <ul className="view-dropdown-content">
+          <div className="view-dropdown-content">
             {hobbies}
-          </ul>
+          </div>
         </div>
         <div className="hobbies-dropdown">
-          <button className="hobbies-dropdown-btn">
+          <button className="hobbies-dropdown-btn" onClick={this.handleHobbies}>
             HOBBIES
           </button>
-          <ul className="hobbies-dropdown-content">
+          <div className="hobbies-dropdown-content">
             {hobbies}
-          </ul>
+          </div>
         </div>
       </>
     );

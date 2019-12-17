@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Home extends React.Component {
   // constructor(props) {
@@ -61,7 +61,7 @@ class Home extends React.Component {
       <main className="home-section">
         <section className="home-things-header">
           <h1> RECOMMENDED THINGS </h1>
-          <h2>SEE ALL</h2>
+          <Link to="/all-hobbies">SEE ALL</Link>
         </section>
         <ul className="home-things-index">
           {thingElements}
