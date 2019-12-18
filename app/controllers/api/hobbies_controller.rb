@@ -12,7 +12,7 @@ class Api::HobbiesController < ApplicationController
     })
     if user_hobby.save
       @user = current_user
-      render '/api/users/users'
+      render '/api/users/show'
     else
       render user_hobby.errors.full_messages
     end
@@ -25,7 +25,7 @@ class Api::HobbiesController < ApplicationController
     })
     if user_hobby.destroy
       @user = current_user
-      render '/api/users/users'
+      render '/api/users/show'
     else
       render user_hobby.errors.full_messages
     end
