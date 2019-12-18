@@ -135,14 +135,16 @@ class Navbar extends React.Component {
     }
     return (
       <nav className="header-nav-bar">
-        <section className="navbar-left">
-          <button className="home-btn" onClick={this.goHome}>
-            <img className="logo" src={window.logo} />
-          </button>
-          {loggedInLeft}
+        <section className="navbar-content">
+          <section className="navbar-left">
+            <button className="home-btn" onClick={this.goHome}>
+              <img className="logo" src={window.logo} />
+            </button>
+            {loggedInLeft}
+          </section>
+          {loginSignup}
+          {loggedInRight}
         </section>
-        {loginSignup}
-        {loggedInRight}
       </nav>
     );
   }

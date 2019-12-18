@@ -48,7 +48,7 @@ class AccountForm extends React.Component {
 
   render() {
     return (
-      <>
+      <section className="auth-form">
         <h2>{this.props.formType}</h2>
         <button onClick={this.demoUser}>DEMO USER</button>
         <div className="signin-login-divider">OR</div>
@@ -78,7 +78,7 @@ class AccountForm extends React.Component {
           <div>{this.props.text}</div>
           <button onClick={this.switchForm}>{this.props.otherFormType.toUpperCase()}</button>    
         </span>
-      </>
+      </section>
     )
   }
 }

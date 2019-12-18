@@ -86,42 +86,12 @@ li {
 
 #root {
   margin: 0 0 0 0;
-  /* position: relative; */
 }
 
 .app {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 
-}
-
-.footer {
-  margin-top: auto;
-  display: flex;
-  height: 300px;
-  width: 100%;
-  justify-content: left;
-  background-color: black;
-  color: white;
-}
-
-.footer > .footer-about, .footer-linkedin {
-  padding: 100px;
-
-}
-
-.footer a {
-  color: white;
-  padding-bottom: 20px;
-}
-
-.footer .footer-logo {
-  width: 150px;
-  height: 40px;
-}
-
-.footer-about, .footer-linkedin {
-  transform: translateY(-90px);
 }
 
 img {

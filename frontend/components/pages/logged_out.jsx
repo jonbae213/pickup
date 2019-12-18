@@ -9,7 +9,7 @@ export class SplashImg extends React.Component {
           <p> Join our family of passion-filled people to find and follow your hobbies. Discover innovative things, made possible by the collective effort of our users. </p>
         </div>
         <section className="splash-img-container">
-          <img src={window.logged_out} className="splash-img" />  
+          <img src={window.rgbKeyboard} className="splash-img" />  
         </section>  
       </section>
     );

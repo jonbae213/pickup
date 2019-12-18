@@ -1,28 +1,47 @@
 .splash-page {
-  width: 100%;
+  width: 77%;
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
 }
 
 .welcome-content {
   position: absolute;
-  top: 160px;
-  left: 90px;
+  top: 150px;
+  right: 950px;
   display: block;
   background-color: white;
-  width: 425px;
-  padding: 25px;
+  width: 355px;
+  padding: 55px;
   z-index: 2;
+
+  h1 {
+    font-size: 36px;
+    font-family: 'stratos', Helvetica, Arial, Verdana;
+    font-weight: 700;
+    line-height: 41px;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'gordita', Helvetica, Arial, Verdana;
+    line-height: 22px;
+    padding-top: 35px;
+  }
 }
 
 .splash-img {
   margin: 0;
   height: 600px;
-  width: 900px;
-  position: relative;
+  width: 1140px;
   right: 0;
+  padding: 0;
 }
 
 .splash-img-container {
-  width: 900px;
+  width: 1140px;
   height: 600px;
   right: 0;
 }

@@ -1,0 +1,31 @@
+.footer {
+  width: 100%;
+  height: 300px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+
+  .footer-content {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 70px;
+
+    .footer-about, .footer-linkedin {
+      h3 {
+        font-family: 'stratos', Helvetica, Arial, Verdana;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 21px;
+        padding-bottom: 20px;
+      }
+      a {
+        font-weight: 400;
+        font-family: 'gordita', Helvetica, Arial, Verdana;
+        line-height: 20px;
+        font-size: 12px;
+      }
+    } 
+  }
+}

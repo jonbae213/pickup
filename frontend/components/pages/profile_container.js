@@ -15,8 +15,6 @@ const mdp = dispatch => ({
   updateUser: (user) => dispatch(updateUser(user)),
   saveTheThing: thingId => dispatch(saveTheThing(thingId)),
   unsaveTheThing: thingId => dispatch(unsaveTheThing(thingId)),
-  followTheHobby: hobbyId => dispatch(followTheHobby(hobbyId)),
-  unfollowTheHobby: hobbyId => dispatch(unfollowTheHobby(hobbyId))
 });
 
 export default connect(msp, mdp)(Profile);

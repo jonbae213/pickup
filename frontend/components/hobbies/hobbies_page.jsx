@@ -86,12 +86,12 @@ export default class AllHobbies extends React.Component {
     allHobbies = allHobbies.map(hobby => {
       return (
         <li className="hobbies-list-item" key={hobby.id} idnum={hobby.id}>
-          <button onClick={this.followAndUnfollow} >
-            {this.followIcon(hobby.id)}
-          </button>
           <h3>
             {hobby.name} ({hobby.thing_ids.length})
           </h3>
+          <button onClick={this.followAndUnfollow} >
+            {this.followIcon(hobby.id)}
+          </button>
         </li>
       );
     });
@@ -129,12 +129,14 @@ export default class AllHobbies extends React.Component {
     return(
       <section className="all-things-section">
         <h1>VIEW:ALL THINGS</h1>
-        <ul className="hobbies-list">
-          {this.hobbiesList()}
-        </ul>
-        <ul className="all-things-index">
-          {thingItems}
-        </ul>
+        <section className="hobbies-things-container">
+          <ul className="hobbies-list">
+            {this.hobbiesList()}
+          </ul>
+          <ul className="all-things-index">
+            {thingItems}
+          </ul>
+        </section>
       </section>
     )
   }
