@@ -1,0 +1,41 @@
+.all-things-section {
+  width: 100%;
+  h1 {
+    font-weight: 800;
+    font-size: 36px;
+  }
+}
+
+.all-things-index {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.all-things-item {
+  width: 30%;
+  height: 575px;
+  background-color: #F1F1F1;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: left;
+  button {
+    background-color: transparent;
+    border: none;
+  
+  }
+}
+
+.review-icon, .bookmark-icon {
+  width: 22px;
+  height: 22px;
+  padding-left: 0;
+}
+
+.all-things-item-content {
+  width: 100%;
+  display: flex;
+
+}

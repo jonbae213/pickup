@@ -10,9 +10,10 @@ class Api::ThingsController < ApplicationController
       thing_id: params[:thing_id],
       user_id: current_user.id
     })
+    
     if user_thing.save
       @user = current_user
-      render '/api/users/users'
+      render '/api/users/show'
     else
       render user_thing.errors.full_messages
     end
@@ -25,7 +26,7 @@ class Api::ThingsController < ApplicationController
     })
     if user_thing.destroy
       @user = current_user
-      render '/api/users/users'
+      render '/api/users/show'
     else
       render user_thing.errors.full_messages 
     end

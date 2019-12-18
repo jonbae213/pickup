@@ -5,7 +5,7 @@ export const LOGOUT_USER = "LOGOUT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_THE_USER = "RECEIVE_THE_USER";
 
-const receiveCurrentUser = payload => ({
+export const receiveCurrentUser = payload => ({
   type: RECEIVE_CURRENT_USER,
   payload
 });
