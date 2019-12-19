@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class AllHobbies extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ export default class AllHobbies extends React.Component {
   
   saveAndUnsave(e) {
     e.preventDefault();
-    const thingId = Number(e.currentTarget.parentElement.attributes.idnum.value);
+    const thingId = Number(e.currentTarget.parentElement.parentElement.attributes.idnum.value);
     let newArr;
     
     if (this.props.currentUser.thing_ids.includes(thingId)) {
@@ -69,7 +70,7 @@ export default class AllHobbies extends React.Component {
 
   thingShowPage(e) {
     e.preventDefault();
-    const id = Number(e.currentTarget.parentElement.attributes.idnum.value);
+    const id = Number(e.currentTarget.parentElement.parentElement.attributes.idnum.value);
     this.props.history.push(`/things/${id}`);
   }
 
@@ -105,32 +106,35 @@ export default class AllHobbies extends React.Component {
     if (things.length !== 0) {
       thingItems = things.map(thing => {
         return (        
-          <li className="all-things-item" key={thing.id} idnum={thing.id}>
-            <button onClick={this.saveAndUnsave}>
-              {this.bookmarkIcon(thing.id)}
-            </button>
-            <button className="all-things-item-content" onClick={this.thingShowPage}>
+          <li className="thing-item" key={thing.id} idnum={thing.id}>
+            <section className="bookmark-holder">
+              <button onClick={this.saveAndUnsave}>
+                {this.bookmarkIcon(thing.id)}
+              </button>
+            </section>
+            <Link to={`/things/${thing.id}`}>
               <h2 className="thing-name">{thing.name}</h2>
-              <h3 className="thing-price">{thing.price}</h3>
+              <h3 className="thing-price">${thing.price}</h3>
               <div className="reviews">
                 <img src={window.reviewIcon} className="review-icon" />
                 <h3 className="review-count">{thing.review_ids.length}</h3>
               </div>
-            </button>
+            </Link>
           </li>
         );
       });
     } else {
-      return (
-        <div>rendering</div>
-      )
+      thingItems = (
+        <div>You are not following any hobbies</div>
+      );
     }
-
+    
     return(
-      <section className="all-things-section">
-        <h1>VIEW:ALL THINGS</h1>
-        <section className="hobbies-things-container">
+      <section className="hobbies-things-section">
+        <h1>VIEW: {this.props.match.path.toUpperCase().slice(1).split('-').join(' ')}</h1>  
+        <section className="hobbies-things-container">        
           <ul className="hobbies-list">
+            <h1>HOBBIES</h1>
             {this.hobbiesList()}
           </ul>
           <ul className="all-things-index">

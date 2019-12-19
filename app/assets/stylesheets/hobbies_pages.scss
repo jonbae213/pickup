@@ -1,62 +1,130 @@
-.all-things-section {
-  width: 100%;
+.hobbies-things-section {
   display: flex;
   flex-direction: column;
-  h1 {
-    font-weight: 800;
-    font-size: 36px;
-  }
+  width: 100%;
+}
+
+.hobbies-things-section > h1 {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  padding-top: 50px;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 41px;
+  font-family: 'stratos', Helvetica, Arial, Verdana;
 }
 
 .hobbies-things-container {
   display: flex;
-}
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 120px;
+  width: 80%;
 
-.hobbies-list {
-  width: 280px;
-}
+  .hobbies-list {
+    width: 320px;
+    padding-top: 10px;
 
-.all-things-index {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-}
+    h1 {
+      border-bottom: 1px solid #9f9e9e;
+      padding-bottom: 5px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 21px;
+      font-family: 'stratos', Helvetica, Arial, Verdana;
+    }
 
-.all-things-item {
-  width: 30%;
-  height: 575px;
-  background-color: #F1F1F1;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-content: left;
-  button {
-    background-color: transparent;
-    border: none;
-  
+    button {
+      border: none;
+      background-color: transparent;
+      font-size: 12px;
+      font-weight: 500;
+      font-family: 'gordita', Helvetica, Arial, Verdana, sans-serif;
+    }
+
+    .hobbies-list-item {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
   }
-}
 
-.hobbies-list-item {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  button {
-    background-color: transparent;
-    border: none;
-    
+  .all-things-index {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .thing-item {
+      background-color: #F1F1F1;
+      width: 31%;
+      height: 550px;
+      box-sizing: border-box;
+      margin: 10px;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      .reviews {
+        display: flex;
+        width: 100%;
+
+        img {
+          width: 17px;
+          height: 17px;
+          padding-right: 5px;
+        }
+      }
+
+      .bookmark-holder {
+        width: 100%;
+        margin-left: 85%;
+        margin-top: 10px;
+        button {
+          border: none;
+          background-color: transparent;
+
+          img {
+            padding: none;
+          }
+        }
+
+        button:focus {
+          outline: none;
+        }
+      }
+
+      a {
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        padding-left: 25px;
+
+        h2, h3, div {
+          padding-bottom: 15px;
+        }
+
+        h2 {
+          font-size: 18px;
+          line-height: 22px;
+          font-family: 'gordita', Helvetica, Arial, Verdana;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+
+        h3 {
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 20px;
+        }
+      }
+
+      a:hover {
+        box-shadow: 5px 10px #888888;
+      }
+    }
   }
-}
-
-.review-icon, .bookmark-icon, .follow-icon {
-  width: 22px;
-  height: 22px;
-  padding-left: 0;
-}
-
-.all-things-item-content {
-  width: 100%;
-  display: flex;
-
 }

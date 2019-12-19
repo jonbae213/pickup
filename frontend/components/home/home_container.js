@@ -13,8 +13,8 @@ const msp = state => ({
 const mdp = dispatch => ({
   getAllHobbies: () => dispatch(getAllHobbies()),
   getAllThings: () => dispatch(getAllThings()),
-  saveThing: (thingId) => dispatch(saveTheThing(thingId)),
-  unsaveThing: (thingId) => dispatch(unsaveTheThing(thingId))
+  saveTheThing: (thingId) => dispatch(saveTheThing(thingId)),
+  unsaveTheThing: (thingId) => dispatch(unsaveTheThing(thingId))
 })
 
 export default withRouter(connect(msp, mdp)(Home));

@@ -3,10 +3,8 @@ class Api::ReviewsController < ApplicationController
   def update
     @review = Review.find_by(id: params[:id])
     if @review.update({ stars: review_params[:stars], body: review_params[:body]})
-      @user = User.includes(:reviews)
-      .includes(:things)
-      .includes(:hobbies)
-      .find_by(id: @review.id)
+      @user = User.includes(:reviews, :things, :hobbies).find_by(id: @review.id)
+ 
       render '/api/users/show'
     else
       render json: @review.errors.full_messages

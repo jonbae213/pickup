@@ -91,7 +91,6 @@ li {
 .app {
   display: flex;
   justify-content: center;
-
 }
 
 ::-webkit-input-placeholder {
@@ -102,5 +101,13 @@ li {
 img {
   width: 150px;
   height: 40px;
-  padding-left: 15px;
+}
+
+.bookmark-icon, .follow-icon {
+  width: 20px;
+  height: 20px;
+}
+
+button:focus {
+  outline: none;
 }

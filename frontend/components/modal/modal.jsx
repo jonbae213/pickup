@@ -12,27 +12,31 @@ const Modal = ({ modal, closeModal }) => {
   }
 
   let component;
-  let className;
+  let className1;
+  let className2;
   switch (modal) {
     case 'Log In':
       component = <LoginFormContainer />;
-      className = "account-modal-child";
+      className1 = "account-modal-child";
+      className2 = "account-modal";
       break;
     case 'Sign Up':
       component = <SignupFormContainer />;
-      className = "account-modal-child";
+      className1 = "account-modal-child";
+      className2 = "account-modal";
       break;
     case 'Searchbar':
       component = <SearchbarAutoContainer />;
-      className = "searchbar-modal"
+      className1 = "searchbar-dropdown";
+      className2 = "searchbar-modal";
       break;
     default:
       return null;
   }
   
   return (
-    <div className="account-modal" onClick={closeModal}>
-      <div className={className} onClick={e => e.stopPropagation()}>
+    <div className={className2} onClick={closeModal}>
+      <div className={className1} onClick={e => e.stopPropagation()}>
         {component}
       </div>
     </div>

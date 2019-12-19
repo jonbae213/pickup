@@ -1,38 +1,209 @@
-.home-things-index {
+.home-carousel-container {
+
+  .home-carousel-text {
+    width: 360px;
+    height: 293px;
+    padding: 25px 20px 25px 30px;
+    position: absolute;
+    top: 160px;
+    left: 280px;
+    z-index: 2;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h1 {
+      font-family: 'stratos', Helvetica, Arial, Verdana;
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 41px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      font-family: 'gordita', Helvetica, Arial, Verdana;
+    } 
+
+    span {
+      width: 100%;
+      text-align: right;
+      font-family: 'gordita', Helvetica, Arial, Verdana;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 25px;
+    }
+  }
+
+  .home-carousel-btn {
+    display: flex;
+    width: auto;
+    height: 45px;
+    position: absolute;
+    top: 480px;
+    left: 577px;
+    z-index: 4;
+
+    .right-arrow, .left-arrow {
+      width: auto;
+      height: 45px;
+      margin: -1px;
+      background-color: purple;
+      border: none;
+
+      img {
+        width: 45px;
+        height: 45px;
+        padding: 0;
+      }
+    }
+
+    .right-arrow:hover {
+      filter: invert(1);
+      background-color: white;
+    }
+
+    .right-arrow:focus {
+      outline: none;
+    }
+
+    .left-arrow:hover {
+      filter: invert(1);
+      background-color: white;
+    }
+
+    .left-arrow:focus {
+      outline: none;
+    }
+
+  }
+  
+}
+
+.home-carousel-image {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-  margin: 0 auto;
-  justify-content: left;
+  flex-direction: row-reverse;
+
+  img {
+    height: 589px;
+    width: 120vh;
+  }
 }
 
 .home-section {
   width: 80%;
-}
 
-.home-section h1 {
-  font-family: 'stratos', Helvetica , Arial, Verdana, sans-serif;
-  font-weight: 500;
-  font-size: 36px;
-  line-height: 41px;
-  margin-left: 20px;
-}
+  .home-things-header {
+    font-family: 'stratos', Helvetica, Arial, Verdana;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 41px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 87px;
+    margin-bottom: 60px;
+    align-items: baseline;
 
-.home-things-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-right: 50px;
-}
+    a {
+      text-decoration: underline;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 21px;
 
-.thing-item {
-  box-sizing: border-box;
-  width: 23%;
-  font-size: 18px;
-  font-family: 'Gordita', Helvetica, Arial, Verdana;
-  background-color: #F1F1F1;
-  margin: 10px;
-  padding: 10px;
-  height: 575px;
+      img {
+        padding: 0;
+        height: 21px;
+        width: 20px;
+      }
+    }
+
+    a:hover {
+      color: purple;
+
+      img {
+        filter: invert(100%);
+      }
+    }
+  }
+
+  .home-things-index {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+
+    .thing-item {
+      background-color: #F1F1F1;
+      width: 25%;
+      height: 550px;
+      box-sizing: border-box;
+      margin: 10px;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      .reviews {
+        display: flex;
+        width: 100%;
+
+        img {
+          width: 17px;
+          height: 17px;
+          padding-right: 5px;
+        }
+      }
+
+      .bookmark-holder {
+        width: 100%;
+        margin-left: 85%;
+        margin-top: 10px;
+        button {
+          border: none;
+          background-color: transparent;
+
+          img {
+            padding: none;
+          }
+        }
+
+        button:focus {
+          outline: none;
+        }
+      }
+
+      a {
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        padding-left: 25px;
+
+        h2, h3, div {
+          padding-bottom: 15px;
+        }
+
+        h2 {
+          font-size: 18px;
+          line-height: 22px;
+          font-family: 'gordita', Helvetica, Arial, Verdana;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+
+        h3 {
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 20px;
+        }
+      }
+
+      a:hover {
+        box-shadow: 5px 10px #888888;
+      }
+    }
+  }
 }
