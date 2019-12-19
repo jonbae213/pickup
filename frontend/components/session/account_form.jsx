@@ -48,37 +48,37 @@ class AccountForm extends React.Component {
 
   render() {
     return (
-      <section className="auth-form">
+      <>
         <h2>{this.props.formType}</h2>
-        <button onClick={this.demoUser}>DEMO USER</button>
-        <div className="signin-login-divider">OR</div>
-        <div className="errors-container">{this.renderErrors()}</div>
-        <form>
-          <div className="form-row">
-            <label>Email
+        <section className="auth-form">  
+          <button onClick={this.demoUser}>DEMO USER</button>
+          <div className="signin-login-divider">OR</div>
+          <div className="errors-container">{this.renderErrors()}</div>
+          <form>
+            <div className="form-row">
+              <label>Email </label>
               <input required type="email"
                 placeholder="Email"
                 value={this.state.email}
                 onChange={this.handleInput('email')}
               />
-            </label>
-          </div>
-          <div className="form-row">
-            <label>Password
+            </div>
+            <div className="form-row">
+              <label>Password      </label>
               <input required type="password"
                 placeholder="Password"
                 value={this.state.password}
                 onChange={this.handleInput('password')}
               />
-            </label>
-          </div>
-          <button onClick={this.handleSubmit}>{this.props.formType.toUpperCase()}</button>
-        </form>
-        <span>
-          <div>{this.props.text}</div>
-          <button onClick={this.switchForm}>{this.props.otherFormType.toUpperCase()}</button>    
-        </span>
-      </section>
+            </div>
+            <button onClick={this.handleSubmit}>{this.props.formType.toUpperCase()}</button>
+          </form>
+          <span className="switch-option">
+            <div>{this.props.text}</div>
+            <button className="switch-button" onClick={this.switchForm}>{this.props.otherFormType.split(' ').join('')}</button>    
+          </span>
+        </section>
+      </>
     )
   }
 }

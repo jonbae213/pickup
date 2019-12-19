@@ -94,6 +94,11 @@ li {
 
 }
 
+::-webkit-input-placeholder {
+  font-style: italic;
+   color: #9f9e9e;
+}
+
 img {
   width: 150px;
   height: 40px;
