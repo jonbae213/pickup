@@ -1,4 +1,4 @@
-![Welcome to Pickup!](https://github.com/jonbae213/pickup/blob/master/app/assets/images/pickup_logo.jpg)
+<center>![Welcome to Pickup!](https://github.com/jonbae213/pickup/blob/master/app/assets/images/pickup_logo.jpg)</center>
 
 # README
 
