@@ -1,28 +1,10 @@
-<center>![Welcome to Pickup!](https://github.com/jonbae213/pickup/blob/master/app/assets/images/pickup_logo.jpg)</center>
+<p align="center">
+  <img src="https://github.com/jonbae213/pickup/blob/master/app/assets/images/pickup_logo.jpg">
+  Live Demo: https://pickup-app-aa.herokuapp.com/#/
+</p>
+    Pickup is an app clone of Drop (formerly known as Massdrop), a group-buy website oriented around passions and community interaction. Built with a Rails/PSQL backend and React/Redux frontend, Pickup highlights some of Drop's key features like posting reviews, following communities/hobbies, and saving things/products to their profiles.
 
-# README
+##Features
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 <!-- <a target="_blank" href="/icons/set/bookmark-ribbon">Bookmark icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
