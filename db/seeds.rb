@@ -41,7 +41,7 @@ demothing15 = Thing.create({hobby_id: demohobby3.id, name: "IEM", price: 20, des
 demothing16 = Thing.create({hobby_id: demohobby4.id, name: "Pickup Alex Automatic Field Watch", price: 300, description: "Designed by us. We used a swiss movement with a traditional field watch aesthetic."})
 demothing17 = Thing.create({hobby_id: demohobby4.id, name: "Seiko Alpinist", price: 400, description: "A sunburst green dial running the 6r15 movement."})
 demothing18 = Thing.create({hobby_id: demohobby4.id, name: "Rolex Daytona", price: 20, description: "Made famous by Paul Newman, this watch provides a sporty racing aesthetic while running arguably one of Rolex's most complicated movements."})
-demothing19 = Thing.create({hobby_id: demohobby4.id, name: "Tudor Prince Oyserdate", price: 1000, description: "Commonly known as Rolex's little brother, Tudor brings to the table its own take on the prominent Rolex Date."})
+demothing19 = Thing.create({hobby_id: demohobby4.id, name: "Tudor Prince Oysterdate", price: 1000, description: "Commonly known as Rolex's little brother, Tudor brings to the table its own take on the prominent Rolex Date."})
 demothing20 = Thing.create({hobby_id: demohobby4.id, name: "Pear Watch", price: 300, description: "Pairs with the Pear Phone and other Pear devices."})
 
 demoreview = Review.create({thing_id: demothing.id, user_id: demouser.id, body: "This is the first review", stars: 5})

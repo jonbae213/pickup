@@ -96,22 +96,10 @@ class Navbar extends React.Component {
     
     return (
       <>
-        <div className="view-dropdown">
-          <button className="view-dropdown-btn" onClick={this.handleView}>
-            VIEW
-          </button>
-          <div className="view-dropdown-content">
-            {hobbies}
-          </div>
-        </div>
-        <div className="hobbies-dropdown">
-          <button className="hobbies-dropdown-btn" onClick={this.handleHobbies}>
-            HOBBIES
-          </button>
-          <div className="hobbies-dropdown-content">
-            {hobbies}
-          </div>
-        </div>
+        <button className="view-dropdown-btn" onClick={this.handleView}
+          >VIEW</button>
+        <button className="hobbies-dropdown-btn" onClick={this.handleHobbies}
+          >HOBBIES</button>
       </>
     );
   }

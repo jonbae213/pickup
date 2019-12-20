@@ -20,7 +20,7 @@ const msp = state => {
       return state.entities.things[thingId]
     })
   } else {
-    things = [];
+    things = Object.values(state.entities.things);
   }
   
   return {

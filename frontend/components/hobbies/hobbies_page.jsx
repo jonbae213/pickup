@@ -103,7 +103,7 @@ export default class AllHobbies extends React.Component {
     let things = this.props.page === 'my-hobbies' ? this.props.things : Object.values(this.props.things)
     let thingItems;
     if (things.length === 0) return null;
-     
+
     if (things.length !== 0) {
       thingItems = things.map(thing => {
         return (        
@@ -126,11 +126,11 @@ export default class AllHobbies extends React.Component {
       });
     } else {
       thingItems = (
-        <div>You are not following any hobbies</div>
+        <li>You are not following any hobbies</li>
       );
     }
     
-    return(
+    return (
       <section className="hobbies-things-section">
         <h1>VIEW: {this.props.match.path.toUpperCase().slice(1).split('-').join(' ')}</h1>  
         <section className="hobbies-things-container">        

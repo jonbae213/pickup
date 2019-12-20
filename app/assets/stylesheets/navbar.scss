@@ -70,7 +70,10 @@
   .navbar-dropdown-content {
     display: none;
     position: absolute;
-    border: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding-top: 25px;
     z-index: 1;
     background-color: white;
   }
@@ -78,7 +81,7 @@
 
 .navbar-dropdown a {
   color: lightgray;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   display: block;
   padding-top: 10px;
   padding-left: 10px;
@@ -97,24 +100,32 @@
   display: flex;
   justify-content: space-between;
   align-content: center;
+  width: 13%;
 }
 
 .navbar-left {
   display: flex;
   justify-content: space-between;
-  align-content: center;
-  width: 400px;
+  height: 100%;
+  width: 30%;
+
   .home-btn {
     padding-left: 0;
+    border: none;
+    height: inherit;
+    // height: 100%;
+    box-sizing: border-box;
+   
   }
+
 }
 
-.navbar-left button {
+.hobbies-dropdown-btn, .view-dropdown-btn {
   border: none;
   font-weight: 800;
   font-size: 16px;
   line-height: 21px;
-
+  height: inherit;
 }
 
 .searchbar-btn {
@@ -126,30 +137,6 @@
   width: 20px;
 }
 
-.view-dropdown-content, .hobbies-dropdown-content {
-  display: none;
-  position: relative;
-  padding-top: 70px;
-  z-index: 5;
-  background-color: white;
-  color: black;
-}
-
-.view-dropdown-btn, .hobbies-dropdown-btn {
-  position: absolute;
-}
-
-.view-dropdown:hover {
-  .view-dropdown-content {
-    display: block;
-  }
-}
-
-.hobbies-dropdown:hover {
-  .hobbies-dropdown-content {
-    display: block;
-  }
-}
 
 .dropdown-list-items:hover {
   text-decoration: underline;
