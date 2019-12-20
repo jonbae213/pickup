@@ -121,8 +121,8 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getAllThings();
-    this.props.getAllHobbies();
+    this.props.getAllThings()
+      .then(this.props.getAllHobbies());
   }
 }
 

@@ -9,13 +9,19 @@ const msp = state => {
     return state.entities.hobbies[hobbyId]
   });
   let hobbiesThingsArr = [];
-  userHobbies.forEach(hobby => {
-    hobbiesThingsArr = hobbiesThingsArr.concat(hobby.thing_ids)
-  });
+  let things;
+  
+  if (Object.keys(state.entities.hobbies).length !== 0) {
+    userHobbies.forEach(hobby => {
+      hobbiesThingsArr = hobbiesThingsArr.concat(hobby.thing_ids)
+    });
 
-  let things = hobbiesThingsArr.map(thingId => {
-    return state.entities.things[thingId]
-  })
+    things = hobbiesThingsArr.map(thingId => {
+      return state.entities.things[thingId]
+    })
+  } else {
+    things = [];
+  }
   
   return {
     things: things,

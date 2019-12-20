@@ -81,8 +81,8 @@ class Navbar extends React.Component {
 
   signedInNavLeft() {
     let hobbies;
-    if (Object.values(this.props.hobbies).length > 0 && this.props.currentUser.thing_ids.length > 0) {
-      
+    
+    if (Object.values(this.props.hobbies).length > 0 && this.props.currentUser.hobby_ids.length > 0) {
       hobbies = this.props.currentUser.hobby_ids.map(hobbyId => {
         return (
           <div className="dropdown-list-items" key={hobbyId}>
@@ -93,7 +93,7 @@ class Navbar extends React.Component {
         );
       });
     }
-
+    
     return (
       <>
         <div className="view-dropdown">

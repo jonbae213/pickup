@@ -103,9 +103,9 @@
   display: flex;
   justify-content: space-between;
   align-content: center;
+  width: 400px;
   .home-btn {
     padding-left: 0;
-    margin-right: 20px;
   }
 }
 
@@ -114,6 +114,7 @@
   font-weight: 800;
   font-size: 16px;
   line-height: 21px;
+
 }
 
 .searchbar-btn {
@@ -127,9 +128,15 @@
 
 .view-dropdown-content, .hobbies-dropdown-content {
   display: none;
-  position: fixed;
+  position: relative;
+  padding-top: 70px;
   z-index: 5;
   background-color: white;
+  color: black;
+}
+
+.view-dropdown-btn, .hobbies-dropdown-btn {
+  position: absolute;
 }
 
 .view-dropdown:hover {

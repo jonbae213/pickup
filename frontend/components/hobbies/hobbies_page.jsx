@@ -102,7 +102,8 @@ export default class AllHobbies extends React.Component {
   render() {
     let things = this.props.page === 'my-hobbies' ? this.props.things : Object.values(this.props.things)
     let thingItems;
-    
+    if (things.length === 0) return null;
+     
     if (things.length !== 0) {
       thingItems = things.map(thing => {
         return (        
