@@ -1,7 +1,5 @@
-import Modal from '../modal/modal';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SearchbarContainer from './searchbar_auto_container';
 
 class Navbar extends React.Component {
   constructor(props) {
