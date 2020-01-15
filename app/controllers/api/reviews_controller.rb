@@ -13,6 +13,13 @@ class Api::ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+
+    if @review.save 
+      @thing = Thing.includes(:reviews).find_by(@review.thing_id)
+      render '/api/things/show'
+    else
+      render json: @review.errors.full_messages
+    end
   end
 
   def destroy

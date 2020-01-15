@@ -5,9 +5,10 @@ import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 import { SplashImg } from './pages/logged_out';
 import Footer from './pages/footer';
 import HomeContainer from './home/home_container';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import AllHobbiesContainer from './hobbies/all_hobbies_container';
 import MyHobbiesContainer from './hobbies/my_hobbies_container';
+import ThingPage from './things/thing_show';
 
 export default () => (
   <>
@@ -17,9 +18,8 @@ export default () => (
       <ProtectedRoute exact path="/home" component={HomeContainer} />
       <AuthRoute exact path="/" component={SplashImg} />
       <Route exact path="/all-hobbies" component={AllHobbiesContainer} />
-      {/* <Route path="/things/:thingId" component={ThingPage} /> */}
+      <Route path="/things/:thingId" component={ThingPage} />
       <Route exact path="/my-hobbies" component={MyHobbiesContainer} />
-      {/* <Route path="/hobbies/:hobbiesId" component={HobbiesPage} /> */}
       {/* <ProtectedRoute path="/profile" component={ProfileContainer} /> */}
     </main>
     <Footer />

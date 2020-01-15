@@ -11,6 +11,6 @@ export default class ThingShow extends React.Component {
   }
 
   render() {
-
+    
   }
 }
