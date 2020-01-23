@@ -111,3 +111,7 @@ img {
 button:focus {
   outline: none;
 }
+
+button:hover {
+  cursor: pointer;
+}
