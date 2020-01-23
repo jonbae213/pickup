@@ -8,7 +8,7 @@ import HomeContainer from './home/home_container';
 import { Route } from 'react-router-dom';
 import AllHobbiesContainer from './hobbies/all_hobbies_container';
 import MyHobbiesContainer from './hobbies/my_hobbies_container';
-import ThingPage from './things/thing_show';
+import ThingPage from './things/thing_show_container';
 
 export default () => (
   <>

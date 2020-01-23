@@ -6,7 +6,7 @@ export const reviewsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_THING:
-      return action.reviews;
+      return action.payload.reviews;
     case RECEIVE_CURRENT_USER:
       if (action.payload.reviews) {
         return action.payload.reviews;

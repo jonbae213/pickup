@@ -13,9 +13,9 @@ export const receiveAllThings = things => ({
   things
 }) 
 
-export const receiveThing = reviews => ({
+export const receiveThing = payload => ({
   type: RECEIVE_THING,
-  reviews
+  payload
 })
 
 export const getAllThings = () => dispatch => {
@@ -25,7 +25,7 @@ export const getAllThings = () => dispatch => {
 
 export const getThingReviews = (thingId) => dispatch => {
   return fetchThingReviews(thingId)
-    .then((reviews) => dispatch(receiveThing(reviews)));
+    .then((payload) => dispatch(receiveThing(payload)));
 }
 
 export const saveTheThing = thingId => dispatch => {
