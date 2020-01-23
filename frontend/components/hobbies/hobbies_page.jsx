@@ -114,6 +114,7 @@ export default class AllHobbies extends React.Component {
               </button>
             </section>
             <Link to={`/things/${thing.id}`}>
+              <img className="stock-photo" src={window.stockPhoto}/>
               <h2 className="thing-name">{thing.name}</h2>
               <h3 className="thing-price">${thing.price}</h3>
               <div className="reviews">
