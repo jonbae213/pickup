@@ -29,7 +29,7 @@ json.reviews do
   else
     @user.reviews.each do |review|
       json.set! review.id do 
-        json.extract! review, :body, :stars, :id
+        json.extract! review, :body, :stars, :id, :user_id, :thing_id
       end
     end
   end

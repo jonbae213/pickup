@@ -5,6 +5,7 @@ import ThingPage from './thing_show';
 const msp = state => ({
   things: state.entities.things,
   reviews: state.entitites.reviews,
+  users: state.entities.users,
 });
 
 const mdp = dispatch => ({
