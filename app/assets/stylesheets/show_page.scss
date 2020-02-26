@@ -1,0 +1,37 @@
+.show-page-container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+
+  .show-page-image {
+    width: 820px;
+    height: 545px;
+  }
+
+  .item-info {
+    padding-left: 20px;
+    width: 570px;
+    height: 545px;
+    font-family: stratos, Helvetica, Arial, serif;
+
+    h1 {
+      margin-top: 34px;
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 41px;
+    }
+
+    h2 {
+      margin-top: 24px;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 20px;
+    }
+
+    h3 {
+      margin-top: 24px;
+      font-family: gordita, Helvetica, Arial, Verdana;
+      font-size: 16px;
+    }
+  }
+}

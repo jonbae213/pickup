@@ -19,7 +19,7 @@ const receiveSessionErrors = (errors) => ({
   errors: errors
 });
 
-const receiveTheUser = payload => ({
+export const receiveTheUser = payload => ({
   type: RECEIVE_THE_USER,
   payload
 });

@@ -1,5 +1,5 @@
 import { RECEIVE_THE_USER, LOGOUT_USER } from '../actions/user_actions';
-import { merge } from 'lodash/merge';
+import merge from 'lodash/merge';
 import { RECEIVE_THING } from '../actions/thing_actions';
 
 export const usersReducer = (state = {}, action) => {

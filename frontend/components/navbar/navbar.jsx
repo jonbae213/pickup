@@ -68,8 +68,8 @@ class Navbar extends React.Component {
             this.props.currentUser.email.slice(0,1).toUpperCase()
           }</button>
           <div className="navbar-dropdown-content">
-            <Link to="/profile">Profile</Link>
-            <Link to="/saved">Saved</Link>
+            {/* <Link to="/profile">Profile</Link>
+            <Link to="/saved">Saved</Link> */}
             <button onClick={this.handleLogout}>Log Out</button>
           </div>
         </div>

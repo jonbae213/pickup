@@ -7,12 +7,12 @@ export const createReview = review => dispatch => {
     .then((payload) => dispatch(receiveThing(payload)));
 }
 
-export const updateReview = review => dispatch => {
+export const updateTheReview = review => dispatch => {
   return updateReview(review)
     .then((payload) => dispatch(receiveTheUser(payload)));
 }
 
-export const deleteReview = reviewId => dispatch => {
+export const deleteTheReview = reviewId => dispatch => {
   return deleteReview(reviewId)
     .then((payload) => dispatch(receiveTheUser(payload)));
 }

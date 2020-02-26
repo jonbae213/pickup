@@ -6,14 +6,16 @@ class HomeCarousel extends React.Component {
     super(props);
 
     this.state = {
+      mounted: false,
       currentIndex: 0,
-      images: [window.daytona, window.pens, window.logged_out],
-      headings: ["EXPERIENCE INSTANT GIFTIFICATION", "BALLPOINT PENS", "AESTHETICIZE YOUR WORKSPACE"],
-      content: ["Get ready for the holidays!", "They work on paper!", "Create an environment that's enjoyabe to work in!"]
+      images: [window.carousel1, window.carousel2, window.carousel3],
+      headings: ["EXPERIENCE INSTANT GIFTIFICATION", "GET YER KEYCAPS", "NEW SWITCHES"],
+      content: ["Get ready for the holidays!", "Clean look and great feel!", "Create an environment that's enjoyabe to work in!"]
     };
 
     this.previousSlide = this.previousSlide.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
+    // this.carouselMove = this.carouselMove.bind(this);
   }
 
   previousSlide(e) {
@@ -38,9 +40,21 @@ class HomeCarousel extends React.Component {
     }
   }
 
-  componentDidMount() {
-    setInterval(this.nextSlide, 5000);
-  }
+  // componentDidMount() {
+  //   if (this.state.mounted) {
+  //     clearInterval(this.carouselMove);
+  //   } else {
+  //     this.carouselMove();
+  //   }
+  // }
+
+  // componentWillUnmount() {
+  //   this.setState({mounted: true});
+  // }
+
+  // carouselMove() {
+  //   setInterval(this.nextSlide, 5000);
+  // }
 
   render() {
     const index = this.state.currentIndex;
