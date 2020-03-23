@@ -5,9 +5,10 @@
 }
 
 .hobbies-things-section > h1 {
-  width: 80%;
+  width: 100%;
   display: block;
   margin: 0 auto;
+  margin-left: 10px;
   padding-top: 50px;
   font-weight: 900;
   font-size: 36px;
@@ -17,10 +18,10 @@
 
 .hobbies-things-container {
   display: flex;
-  margin-left: auto;
+  margin-left: 10px;
   margin-right: auto;
   margin-top: 120px;
-  width: 80%;
+  width: 100%;
 
   .hobbies-list {
     width: 320px;

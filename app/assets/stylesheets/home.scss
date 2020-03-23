@@ -1,4 +1,5 @@
 .home-carousel-container {
+  position: relative;
 
   .home-carousel-text {
     width: 360px;
@@ -6,7 +7,7 @@
     padding: 25px 20px 25px 30px;
     position: absolute;
     top: 160px;
-    left: 280px;
+    left: 5%;
     z-index: 2;
     background-color: white;
     display: flex;
@@ -45,7 +46,7 @@
     height: 45px;
     position: absolute;
     top: 480px;
-    left: 577px;
+    left: calc(5% + 297px);
     z-index: 4;
 
     .right-arrow, .left-arrow {
@@ -90,13 +91,14 @@
   flex-direction: row-reverse;
 
   img {
+    margin-left: 5%;
     height: 589px;
-    width: 120vh;
+    width: 75%;
   }
 }
 
 .home-section {
-  width: 80%;
+  width: 100%;
 
   .home-things-header {
     font-family: 'stratos', Helvetica, Arial, Verdana;

@@ -40,21 +40,9 @@ class HomeCarousel extends React.Component {
     }
   }
 
-  // componentDidMount() {
-  //   if (this.state.mounted) {
-  //     clearInterval(this.carouselMove);
-  //   } else {
-  //     this.carouselMove();
-  //   }
-  // }
-
-  // componentWillUnmount() {
-  //   this.setState({mounted: true});
-  // }
-
-  // carouselMove() {
-  //   setInterval(this.nextSlide, 5000);
-  // }
+  componentDidMount() {
+    setInterval(() => {this.nextSlide();}, 4000);
+  }
 
   render() {
     const index = this.state.currentIndex;

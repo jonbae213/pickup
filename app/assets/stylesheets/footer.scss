@@ -7,10 +7,12 @@
   justify-content: center;
 
   .footer-content {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding-top: 70px;
+    padding-left: 10px;
+    padding-right: 50px;
 
     .footer-about, .footer-linkedin {
       h3 {

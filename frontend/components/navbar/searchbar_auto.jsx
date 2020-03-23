@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { closeModal } from '../../actions/modal_actions';
 
 // inspiration from alligator.io/react/react-autocomplete/
 class SearchbarAuto extends React.Component {
@@ -14,6 +15,7 @@ class SearchbarAuto extends React.Component {
     this.onChange = this.onChange.bind(this);
     this.onClick = this.onClick.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
+    this.closeBar = this.closeBar.bind(this);
   }
 
   onChange(e) {
@@ -44,6 +46,13 @@ class SearchbarAuto extends React.Component {
     let actInd = activeSuggIndex;
     if (e.keyCode === 13) {
       this.props.history.push(`/things/${filteredSuggArr[activeSuggIndex].id}`)
+      this.setState({
+        activeSuggIndex: 0,
+        filteredSuggArr: [],
+        show: false,
+        userInput: ''
+      });
+      closeModal();
     } else if (e.keyCode === 38) {
       if (actInd === 0) {
         return;
@@ -55,6 +64,15 @@ class SearchbarAuto extends React.Component {
       }
       this.setState({ activeSuggIndex: actInd + 1 });
     }
+  }
+
+  closeBar() {
+    this.setState({
+      activeSuggIndex: 0,
+      filteredSuggArr: [],
+      show: false,
+      userInput: e.currentTarget.innerText
+    });
   }
 
   filterSuggs(thingArr, userInput) {
