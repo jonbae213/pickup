@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { closeModal } from '../../actions/modal_actions';
 
 // inspiration from alligator.io/react/react-autocomplete/
 class SearchbarAuto extends React.Component {
@@ -39,6 +38,7 @@ class SearchbarAuto extends React.Component {
       show: false,
       userInput: e.currentTarget.innerText
     });
+    this.props.closeModal();
   }
 
   onKeyDown(e) {
@@ -52,7 +52,7 @@ class SearchbarAuto extends React.Component {
         show: false,
         userInput: ''
       });
-      closeModal();
+      this.props.closeModal();
     } else if (e.keyCode === 38) {
       if (actInd === 0) {
         return;
@@ -96,7 +96,7 @@ class SearchbarAuto extends React.Component {
         }
         return (
           <li className={ className } key={i} >
-            <Link to={`/things/${thing.id}`}>
+            <Link to={`/things/${thing.id}`} onClick={this.onClick}>
               {thing.name}
             </Link>
           </li>
