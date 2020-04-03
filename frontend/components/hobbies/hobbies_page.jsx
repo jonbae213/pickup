@@ -100,36 +100,50 @@ export default class AllHobbies extends React.Component {
   }
 
   render() {
-    let things = this.props.page === 'my-hobbies' ? this.props.things : Object.values(this.props.things)
-    let thingItems;
-    if (things.length === 0) return null;
+    if (Object.values(this.props.things).length === 0) return null;
 
-    if (things.length !== 0) {
-      thingItems = things.map(thing => {
-        return (        
-          <li className="thing-item" key={thing.id} idnum={thing.id}>
-            <section className="bookmark-holder">
-              <button onClick={this.saveAndUnsave}>
-                {this.bookmarkIcon(thing.id)}
-              </button>
-            </section>
-            <Link to={`/things/${thing.id}`}>
-              <img className="stock-photo" src={window.stockPhoto}/>
-              <h2 className="thing-name">{thing.name}</h2>
-              <h3 className="thing-price">${thing.price}</h3>
-              <div className="reviews">
-                <img src={window.reviewIcon} className="review-icon" />
-                <h3 className="review-count">{thing.review_ids.length}</h3>
-              </div>
-            </Link>
-          </li>
-        );
-      });
+    let things;
+    
+    if (this.props.currentUser.hobby_ids.length === 0) {
+      things = Object.values(this.props.things);
     } else {
-      thingItems = (
-        <li>You are not following any hobbies</li>
-      );
+      let personalizedThings = Object.values(this.props.things);   
+      // problem with thing_ids
+      let thingIds = [];
+      let hobbies = this.props.hobbies;
+      
+      this.props.currentUser.hobby_ids.forEach(hobbyId => {
+        thingIds = thingIds.concat(hobbies[hobbyId].thing_ids);
+      });
+      things = [];
+
+      personalizedThings.forEach(thing => {
+        if (thingIds.includes(thing.id)) {
+          things.push(thing);
+        }
+      });
     }
+    
+    let thingItems = things.map(thing => {
+      return (        
+        <li className="thing-item" key={thing.id} idnum={thing.id}>
+          <section className="bookmark-holder">
+            <button onClick={this.saveAndUnsave}>
+              {this.bookmarkIcon(thing.id)}
+            </button>
+          </section>
+          <Link to={`/things/${thing.id}`}>
+            <img className="stock-photo" src={window.stockPhoto}/>
+            <h2 className="thing-name">{thing.name}</h2>
+            <h3 className="thing-price">${thing.price}</h3>
+            <div className="reviews">
+              <img src={window.reviewIcon} className="review-icon" />
+              <h3 className="review-count">{thing.review_ids.length}</h3>
+            </div>
+          </Link>
+        </li>
+      );
+    });
     
     return (
       <section className="hobbies-things-section">

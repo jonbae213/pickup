@@ -105,7 +105,7 @@
 
 .navbar-left {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   height: 100%;
   width: 30%;
 
@@ -115,7 +115,7 @@
     height: inherit;
     // height: 100%;
     box-sizing: border-box;
-   
+    margin-right: 50px;
   }
 
 }

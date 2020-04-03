@@ -11,7 +11,6 @@ class Navbar extends React.Component {
     this.signedInNavRight = this.signedInNavRight.bind(this);
     this.handleSearchbar = this.handleSearchbar.bind(this);
     this.signedInNavLeft = this.signedInNavLeft.bind(this);
-    this.handleHobbies = this.handleHobbies.bind(this);
     this.handleView = this.handleView.bind(this);
     this.goHome = this.goHome.bind(this);
     this.handleProfile = this.handleProfile.bind(this);
@@ -44,17 +43,12 @@ class Navbar extends React.Component {
 
   handleView(e) {
     e.preventDefault();
-    this.props.history.push('/all-hobbies');
+    this.props.history.push('/hobbies');
   }
 
   handleProfile(e) {
     e.preventDefault();
     this.props.history.push('/profile')
-  }
-
-  handleHobbies(e) {
-    e.preventDefault();
-    this.props.history.push('/my-hobbies');
   }
 
   signedInNavRight() {
@@ -93,12 +87,7 @@ class Navbar extends React.Component {
     }
     
     return (
-      <>
-        <button className="view-dropdown-btn" onClick={this.handleView}
-          >VIEW</button>
-        <button className="hobbies-dropdown-btn" onClick={this.handleHobbies}
-          >HOBBIES</button>
-      </>
+      <button className="view-dropdown-btn" onClick={this.handleView}>VIEW</button>
     );
   }
   

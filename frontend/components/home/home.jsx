@@ -111,7 +111,7 @@ class Home extends React.Component {
         <HomeCarousel />
         <section className="home-things-header">
           <h1> RECOMMENDED THINGS </h1>
-          <Link to="/all-hobbies">
+          <Link to="/hobbies">
             SEE ALL <img src={window.rightArrow} />
           </Link>
         </section>

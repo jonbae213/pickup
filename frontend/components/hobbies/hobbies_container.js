@@ -7,8 +7,7 @@ import { getAllHobbies, followTheHobby, unfollowTheHobby } from '../../actions/h
 const msp = state => ({
   currentUser: state.session.currentUser,
   hobbies: state.entities.hobbies,
-  things: state.entities.things,
-  page: 'all-hobbies'
+  things: state.entities.things
 });
 
 const mdp = dispatch => ({
